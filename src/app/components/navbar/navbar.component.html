@@ -1,4 +1,4 @@
-<nav class="navbar bg-light navbar-dark bg-dark">
+<nav class="navbar bg-light navbar-dark bg-dark fixed-top">
   <div class="container">
     <div class="position-relative">
       <a class="navbar-brand brand-position">Team L </a>
@@ -9,7 +9,8 @@
         class="btn btn-dark me-2"
         style="border-radius: 0px"
         type="submit"
-        data-bs-toggle="modal" data-bs-target="#exampleModal"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
       >
         Iniciar Sesion
       </button>
@@ -21,32 +22,65 @@
 </nav>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Inicio sesion</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
         <form class="form-control">
           <div class="mb-3 row">
-            <label for="staticEmail" class="col-sm-3 col-form-label">Email</label>
+            <label for="staticEmail" class="col-sm-3 col-form-label"
+              >Email</label
+            >
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="staticEmail" value="email@example.com">
+              <input
+                type="text"
+                class="form-control"
+                id="staticEmail"
+                value="email@example.com"
+              />
             </div>
           </div>
           <div class="mb-3 row">
-            <label for="inputPassword" class="col-sm-3 col-form-label">Contraseña</label>
+            <label for="inputPassword" class="col-sm-3 col-form-label"
+              >Contraseña</label
+            >
             <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPassword">
+              <input type="password" class="form-control" id="inputPassword" />
             </div>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button"  style="border-radius: 0px" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" style="border-radius: 0px" class="btn btn-warning">Iniciar</button>
+        <button
+          type="button"
+          style="border-radius: 0px"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          Cerrar
+        </button>
+        <button
+          type="button"
+          style="border-radius: 0px"
+          class="btn btn-warning"
+        >
+          Iniciar
+        </button>
       </div>
     </div>
   </div>
