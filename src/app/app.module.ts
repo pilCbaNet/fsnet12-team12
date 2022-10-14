@@ -11,6 +11,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import { ServiciosOfrecidosComponent } from './components/servicios-ofrecidos/servicios-ofrecidos.component';
 import { FormComponent } from './components/form/form.component';
 import { FooterComponent } from './components/Layout/footer/footer.component';
+import { OperacionesComponent } from './operaciones/operaciones.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FooterComponent } from './components/Layout/footer/footer.component';
     ServiciosOfrecidosComponent,
     FormComponent,
     FooterComponent,
+    OperacionesComponent,
   ],
 
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
