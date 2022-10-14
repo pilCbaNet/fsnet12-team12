@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 //Componentes
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarComponent } from './components/Layout/navbar/navbar.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { ServiciosOfrecidosComponent } from './components/servicios-ofrecidos/servicios-ofrecidos.component';
 import { FormComponent } from './components/form/form.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { FooterComponent } from './components/Layout/footer/footer.component';
 
 @NgModule({
   declarations: [
