@@ -6,22 +6,20 @@ import { OperacionesComponent } from './components/operaciones/operaciones.compo
 import { ServiciosOfrecidosComponent } from './components/servicios-ofrecidos/servicios-ofrecidos.component';
 
 const routes: Routes = [
-  {path: 'home', component:ServiciosOfrecidosComponent},
-  {path:'menu', component:MenuComponent,
-children:[
-  {path: 'movimientos', component:MovimientosComponent},
-  {path: 'operaciones', component:OperacionesComponent,
-children:[
-  {},
-  {},
-  {}
-  ]},
-]},
-  {path: '', redirectTo:'/home', pathMatch:'full'}
+  { path: 'home', component: ServiciosOfrecidosComponent },
+  {
+    path: 'menu',
+    component: MenuComponent,
+    children: [
+      { path: 'movimientos', component: MovimientosComponent },
+      { path: 'operaciones', component: OperacionesComponent },
+    ],
+  },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,0 +1,20 @@
+{
+  "members": [
+    {
+      "dni": 1,
+      "name": "json-server",
+      "linkedin": "typicode"
+    }
+  ],
+  "deposits": [
+    {
+      "id": 1,
+      "date": "15/10/2022",
+      "mount": 1000,
+      "description": "Deposit cash"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
