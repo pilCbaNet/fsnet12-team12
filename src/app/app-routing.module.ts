@@ -10,7 +10,12 @@ const routes: Routes = [
   {path:'menu', component:MenuComponent,
 children:[
   {path: 'movimientos', component:MovimientosComponent},
-  {path: 'operaciones', component:OperacionesComponent},
+  {path: 'operaciones', component:OperacionesComponent,
+children:[
+  {},
+  {},
+  {}
+  ]},
 ]},
   {path: '', redirectTo:'/home', pathMatch:'full'}
 ];
