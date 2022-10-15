@@ -12,6 +12,8 @@ import { ServiciosOfrecidosComponent } from './components/servicios-ofrecidos/se
 import { FormComponent } from './components/form/form.component';
 import { FooterComponent } from './components/Layout/footer/footer.component';
 import { OperacionesComponent } from './components/operaciones/operaciones.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { MovimientosComponent } from './components/movimientos/movimientos.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { OperacionesComponent } from './components/operaciones/operaciones.compo
     FormComponent,
     FooterComponent,
     OperacionesComponent,
+    MenuComponent,
+    MovimientosComponent,
   ],
 
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
