@@ -2,18 +2,19 @@
 .loginBody {
     font-family: "Poppins", sans-serif;
     height: 100vh;
+    background:#ffc107;
   }
   
   
   
   h2 {
-    color:lightslategray;
+    color:#ffc107;
     text-align: center;
-    font-size: 12px;
+    font-size: 120%;
     font-weight: 600;
     text-transform: uppercase;
     display:inline-block;
-    margin: 40px 8px 10px 8px; 
+    margin: 40px 8px 20px 8px; 
   }
   
   
@@ -33,7 +34,7 @@
   #formContent {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
-    background: #fff;
+    background: black;
     padding: 30px;
     width: 90%;
     max-width: 450px;
@@ -49,20 +50,20 @@
   /* TABS */
   
   h2.inactive {
-    color: #cccccc;
+    color: red;
   }
   
-  h2.active {
-    color: #0d0d0d;
-    border-bottom: 2px solid #171b1d;
+  ::placeholder {
+    color: #f5cc51;
   }
+ 
   
   
   
   /* FORM TYPOGRAPHY*/
   
   input[type=button], input[type=submit], input[type=reset]  {
-    background-color: #f0763d;
+    background-color: #ffc107;
     border:none;
     color: white;
     padding: 15px 80px;
@@ -72,10 +73,10 @@
     text-transform: uppercase;
     font-size: 13px;
     -webkit-box-shadow: 0 10px 30px 0 rgba(147, 221, 51, 0.4);
-    box-shadow: 0 10px 30px 0 #f0763d;
+    box-shadow: 0 10px 30px 0 #ffc107;
     -webkit-border-radius: 5px 5px 5px 5px;
     border-radius: 5px 5px 5px 5px;
-    margin: 5px 20px 40px 20px;
+    margin: 5px 20px 30px 20px;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
@@ -95,7 +96,7 @@
   } 
   
   input[type=text] {
-    background-color: #e4dede;
+    background-color: gray;
     border: none;
     color:black ;
     padding: 15px 32px;
@@ -105,7 +106,7 @@
     font-size: 16px;
     margin: 5px;
     width: 50%;
-    border: 2px solid #f7f2f2;
+    border: 2px solid gray;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -ms-transition: all 0.5s ease-in-out;

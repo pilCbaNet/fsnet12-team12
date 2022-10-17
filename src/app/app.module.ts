@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+/* import { FontAwesomeModule } from '@fontawesome/angular-fontawesome'; */
 
 //Componentes
 import { NavbarComponent } from './components/Layout/navbar/navbar.component';
@@ -28,7 +28,7 @@ import { MovimientosComponent } from './components/movimientos/movimientos.compo
     MovimientosComponent,
   ],
 
-  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
+  imports: [BrowserModule, AppRoutingModule, /* FontAwesomeModule */],
   providers: [],
   bootstrap: [AppComponent],
 })
