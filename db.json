@@ -6,14 +6,59 @@
       "linkedin": "typicode"
     }
   ],
-  "deposits": [
+  "cuentas": [
     {
       "id": 1,
-      "date": "15/10/2022",
-      "mount": 1000,
-      "description": "Deposit cash"
+      "nombreUsuario": "JuanCarlosDiaz",
+      "contraseña": "juanc1234",
+      "operaciones":[
+        {
+          "id": 1,
+          "fecha": "10/10/2022",
+          "monto": 10000,
+          "tipoDeOperacion": "Depósito"
+        },
+        {
+          "id": 2,
+          "fecha": "14/10/2022",
+          "monto": 30000,
+          "tipoDeOperacion": "Depósito"
+        },
+        {
+          "id": 3,
+          "fecha": "17/10/2022",
+          "monto": 20000
+        }
+      ],
+      "saldoActual": 20000
+    },
+    {
+      "id": 2,
+      "nombreUsuario": "MarianaLopez",
+      "contraseña": "mlopez2022",
+      "operaciones":[
+        {
+          "id": 4,
+          "fecha": "12/10/2022",
+          "monto": 50000,
+          "tipoDeOperacion": "Depósito"
+        },
+        {
+          "id": 5,
+          "fecha": "14/10/2022",
+          "monto": 30000,
+          "tipoDeOperacion": "Retiro"
+        },
+        {
+          "id": 6,
+          "fecha": "17/10/2022",
+          "monto": 10000
+        }
+      ],
+      "saldoActual": 10000
     }
   ],
+  
   "profile": {
     "name": "typicode"
   }
