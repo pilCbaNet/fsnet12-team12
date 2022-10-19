@@ -17,6 +17,7 @@ import { MovimientosComponent } from './components/movimientos/movimientos.compo
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UltimosRetirosComponent } from './components/ultimos-retiros/ultimos-retiros.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MovimientosComponent,
     QuienesSomosComponent,
     DashboardComponent,
+    UltimosRetirosComponent,
   ],
 
   imports: [
