@@ -107,5 +107,17 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  
+  "users":
+  [
+    {
+      "email": "mau@gmail.com",
+      "password": "123456"
+    },
+    {
+      "email": "rodri27@gmail.com",
+      "password": "123456789"
+    }
+  ]
 }
