@@ -14,6 +14,8 @@ import { FooterComponent } from './components/Layout/footer/footer.component';
 import { OperacionesComponent } from './components/operaciones/operaciones.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { MovimientosComponent } from './components/movimientos/movimientos.component';
+import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,9 +28,14 @@ import { MovimientosComponent } from './components/movimientos/movimientos.compo
     OperacionesComponent,
     MenuComponent,
     MovimientosComponent,
+    QuienesSomosComponent,
   ],
 
-  imports: [BrowserModule, AppRoutingModule, /* FontAwesomeModule */],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

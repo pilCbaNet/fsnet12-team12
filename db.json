@@ -2,6 +2,7 @@
   "members": [
     {
       "dni": 1,
+      "foto": "../../../assets/images/miembro",
       "name": "json-server",
       "linkedin": "typicode"
     }
