@@ -5,13 +5,13 @@ import { MenuComponent } from './components/menu/menu.component';
 import { MovimientosComponent } from './components/movimientos/movimientos.component';
 import { OperacionesComponent } from './components/operaciones/operaciones.component';
 import { ServiciosOfrecidosComponent } from './components/servicios-ofrecidos/servicios-ofrecidos.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'home', component: ServiciosOfrecidosComponent },
   { path:'form', component: FormComponent},
-  {
-    path: 'menu',
-    component: MenuComponent,
+  { path: 'dashboard', component: DashboardComponent},
+  { path: 'menu', component: MenuComponent,
     children: [
       { path: 'movimientos', component: MovimientosComponent },
       { path: 'operaciones', component: OperacionesComponent },
