@@ -1,4 +1,4 @@
-<div class="container mt-3 d-flex flex-column">
+<div class="container mt-3 d-flex flex-column rounded bg-white">
   <header>
     <p style="float: right">
       <span style="font-weight: 550">Bienvenido, NOMBRE APELLIDO. <br /></span>
@@ -71,35 +71,30 @@
         </tr>
       </thead>
       <tbody>
-        <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <th scope="row">03/10/2022</th>
-          <td>RETIRO DE EFECTIVO/CAJERO</td>
-          <td style="color: red">-$3000</td>
-          <td>$3256</td>
-          <td>Link</td>
-        </tr>
-        <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <th scope="row">02/10/2022</th>
-          <td>DEPOSITO CON DEBITO</td>
-          <td>$1000</td>
-          <td>$6256</td>
-          <td>Link</td>
-        </tr>
+        <ng-container *ngFor="let item of movimientos">
+          <tr data-bs-toggle="modal" data-bs-target="#movementsModal">
+            <th scope="row">{{ item.date }}</th>
+            <td>{{ item.description }}</td>
+            <td style="color: red">{{ item.mount }}</td>
+            <td>$3256</td>
+            <td>Link</td>
+          </tr>
+        </ng-container>
       </tbody>
     </table>
 
     <div
       class="modal fade"
-      id="exampleModal"
+      id="movementsModal"
       tabindex="-1"
       role="dialog"
-      aria-labelledby="exampleModalLabel"
+      aria-labelledby="movementsModalLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
+            <h5 class="modal-title" id="movementsModalLabel">
               Operación #213521
             </h5>
             <button
