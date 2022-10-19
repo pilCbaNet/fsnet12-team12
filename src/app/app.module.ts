@@ -16,6 +16,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { MovimientosComponent } from './components/movimientos/movimientos.component';
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     MenuComponent,
     MovimientosComponent,
     QuienesSomosComponent,
+    DashboardComponent,
   ],
 
   imports: [
