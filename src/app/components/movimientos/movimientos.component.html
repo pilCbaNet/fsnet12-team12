@@ -17,62 +17,117 @@
       }}
     </p>
   </header>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Escritorio</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Movimientos</li>
+    </ol>
+  </nav>
 
   <section>
     <h2>Detalles de movimientos</h2>
     <hr />
 
-    <fieldset>
-      <legend>Datos de cuenta</legend>
-      <label for="username">Caja de ahorro</label> :
-      <select name="cajadeahorro" id="cajadeahorro">
-        <option value="CA-1112-1111-3333/CUENTA-PESOS">
-          CA-1112-1111-3333/CUENTA-PESOS
-        </option>
-      </select>
-      <br />
-      <br />
-      <h4>Filtrar por</h4>
-
-      <div class="input-group mt-3 mb-2">
-        <label class="input-group-text bg-dark text-light" for="filtrartipo"
-          >Tipo de Operación</label
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button bg-warning"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            Datos de cuenta
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="headingOne"
         >
-        <select class="form-select" name="filtrartipo" id="filtrartipo">
-          <option value="" disabled selected>
-            Seleccione el tipo de operación
-          </option>
-          <option value="debito">Depósito</option>
-          <option value="retiro">Retiro</option>
-        </select>
+          <div class="accordion-body">
+            <h4>Datos de cuenta</h4>
+            <label class="mt-2" for="username">Caja de ahorro</label> :
+            <select name="cajadeahorro" id="cajadeahorro">
+              <option value="CA-1112-1111-3333/CUENTA-PESOS">
+                CA-1112-1111-3333/CUENTA-PESOS
+              </option>
+            </select>
+            <br />
+          </div>
+        </div>
       </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed bg-warning"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            Filtrar Movimientos
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+        >
+          <div class="accordion-body">
+            <h4>Filtrar por</h4>
 
-      <label for="filtrardesde">Fecha desde</label> :
-      <input type="date" name="filtrardesde" id="filtrardesde" />
+            <div class="input-group mt-3 mb-2">
+              <label
+                class="input-group-text bg-dark text-light"
+                for="filtrartipo"
+                >Tipo de Operación</label
+              >
+              <select class="form-select" name="filtrartipo" id="filtrartipo">
+                <option value="" disabled selected>
+                  Seleccione el tipo de operación
+                </option>
+                <option value="debito">Depósito</option>
+                <option value="retiro">Retiro</option>
+              </select>
+            </div>
 
-      <label for="filtrardesde">Fecha hasta</label> :
-      <input type="date" name="filtrarhasta" id="filtrarhasta" />
-      <br /><br />
-      <label for="nrooperaciones">Cantidad de operaciones a mostrar</label>
-      <input
-        type="number"
-        name="nrooperaciones"
-        id="nrooperaciones"
-        min="0"
-        value="10"
-        max="30"
-        step="1"
-      />
-      <br />
-      <span class="button_row">
-        <input type="button" class="btn btn-outline-primary" value="Buscar" />
-        <input
-          type="button"
-          class="btn btn-outline-secondary"
-          value="Descargar"
-      /></span>
-    </fieldset>
-    <br />
+            <label for="filtrardesde">Fecha desde</label> :
+            <input type="date" name="filtrardesde" id="filtrardesde" />
+
+            <label for="filtrardesde">Fecha hasta</label> :
+            <input type="date" name="filtrarhasta" id="filtrarhasta" />
+            <br /><br />
+            <label for="nrooperaciones"
+              >Cantidad de operaciones a mostrar</label
+            >
+            <input
+              type="number"
+              name="nrooperaciones"
+              id="nrooperaciones"
+              min="0"
+              value="10"
+              max="30"
+              step="1"
+            />
+            <br />
+            <span class="button_row">
+              <input
+                type="button"
+                class="btn btn-outline-primary"
+                value="Buscar" />
+              <input
+                type="button"
+                class="btn btn-outline-secondary"
+                value="Descargar"
+            /></span>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <table class="table table-hover">
       <thead>
