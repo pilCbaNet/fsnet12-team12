@@ -32,6 +32,7 @@ export class MovimientosComponent implements OnInit {
       accountName: 'Iratxe Sancho',
     },
   ];
+  now: any = new Date();
 
   constructor() {}
 

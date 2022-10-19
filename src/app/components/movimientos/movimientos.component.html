@@ -7,7 +7,15 @@
         ><a href="../../../assets/images/Banner.png">Ver ayuda.</a></span
       >
     </p>
-    <p style="float: left">Miércoles 5 de Octubre, 2022</p>
+    <p style="float: left">
+      {{
+        now.toLocaleDateString("es-AR", {
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        })
+      }}
+    </p>
   </header>
 
   <section>
@@ -23,16 +31,22 @@
         </option>
       </select>
       <br />
-      <h5>Filtrar por</h5>
-      <label for="filtrartipo">Tipo de operacion</label> :
-      <select name="filtrartipo" id="filtrartipo">
-        <option value="" disabled selected>
-          Seleccione el tipo de operación
-        </option>
-        <option value="debito">Depósito</option>
-        <option value="retiro">Retiro</option>
-      </select>
       <br />
+      <h4>Filtrar por</h4>
+
+      <div class="input-group mt-3 mb-2">
+        <label class="input-group-text bg-dark text-light" for="filtrartipo"
+          >Tipo de Operación</label
+        >
+        <select class="form-select" name="filtrartipo" id="filtrartipo">
+          <option value="" disabled selected>
+            Seleccione el tipo de operación
+          </option>
+          <option value="debito">Depósito</option>
+          <option value="retiro">Retiro</option>
+        </select>
+      </div>
+
       <label for="filtrardesde">Fecha desde</label> :
       <input type="date" name="filtrardesde" id="filtrardesde" />
 
@@ -62,7 +76,7 @@
 
     <table class="table table-hover">
       <thead>
-        <tr>
+        <tr class="bg-warning">
           <th scope="col">Fecha</th>
           <th scope="col">Descripción</th>
           <th scope="col">Importe</th>
