@@ -13,7 +13,7 @@ export class InicioSessionService {
 
   iniciar_session(login:Login):Observable<any>
   {
-    return this.http.post('http://localhost:3000/users',login)
+    return this.http.post('http://localhost:3000/posts',login)
   }
 
 }
