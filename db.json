@@ -9,6 +9,16 @@
       "email": "ama@aa.com",
       "password": "aaasd",
       "id": 2
+    },
+    {
+      "email": "ama@aa.com",
+      "password": "aaasd",
+      "id": 3
+    },
+    {
+      "email": "ama@aa.com",
+      "password": "aaasd",
+      "id": 4
     }
   ],
   "comments": [
@@ -16,6 +26,96 @@
       "id": 1,
       "body": "some comment",
       "postId": 1
+    }
+  ],
+  "movements": [
+    {
+      "id": 1,
+      "date": "15/01/2022",
+      "mount": 1000,
+      "description": "Deposit cash",
+      "accountNumber": "1234567890",
+      "accountName": "Fernando Yañez"
+    },
+    {
+      "id": 2,
+      "date": "15/02/2022",
+      "mount": 2000,
+      "description": "Withdraw cash",
+      "accountNumber": "1234567891",
+      "accountName": "Hortensia Marrero"
+    },
+    {
+      "id": 3,
+      "date": "15/03/2022",
+      "mount": 3000,
+      "description": "Deposit cash",
+      "accountNumber": "1234567892",
+      "accountName": "Iratxe Sancho"
+    },
+    {
+      "id": 4,
+      "date": "15/04/2022",
+      "mount": 4000,
+      "description": "Transfer cash",
+      "accountNumber": "1234567893",
+      "accountName": "Bonifacio Matos"
+    },
+    {
+      "id": 5,
+      "date": "15/05/2022",
+      "mount": 5000,
+      "description": "Deposit cash",
+      "accountNumber": "1234567894",
+      "accountName": "Peter Gonzalez"
+    },
+    {
+      "id": 6,
+      "date": "15/06/2022",
+      "mount": 6000,
+      "description": "Transfer cash",
+      "accountNumber": "1234567895",
+      "accountName": "Rosario Parada"
+    },
+    {
+      "id": 7,
+      "date": "15/07/2022",
+      "mount": 7000,
+      "description": "Deposit cash",
+      "accountNumber": "1234567896",
+      "accountName": "Benjamin Segarra"
+    },
+    {
+      "id": 8,
+      "date": "15/08/2022",
+      "mount": 1000,
+      "description": "Transfer cash",
+      "accountNumber": "1234567897",
+      "accountName": "Ceferino Quesada"
+    },
+    {
+      "id": 9,
+      "date": "15/09/2022",
+      "mount": 1000,
+      "description": "Deposit cash",
+      "accountNumber": "1234567898",
+      "accountName": "Ernesto Nicolas"
+    },
+    {
+      "id": 10,
+      "date": "15/10/2022",
+      "mount": 1000,
+      "description": "Deposit cash",
+      "accountNumber": "1234567899",
+      "accountName": "Santiago Pico"
+    },
+    {
+      "id": 11,
+      "date": "19/10/2022",
+      "mount": 1000,
+      "description": "Withdraw cash",
+      "accountNumber": "",
+      "accountName": ""
     }
   ],
   "profile": {
