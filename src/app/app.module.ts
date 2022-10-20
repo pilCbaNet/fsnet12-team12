@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UltimosRetirosComponent } from './components/ultimos-retiros/ultimos-retiros.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RetiroComponent } from './components/retiro/retiro.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     QuienesSomosComponent,
     DashboardComponent,
     UltimosRetirosComponent,
+    RetiroComponent,
   ],
 
   imports: [
