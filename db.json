@@ -120,5 +120,14 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+
+  "members": [
+    {
+    "id": 1,
+    "nombre": "",
+    "foto": "",
+    "linkedin": ""
+    }
+]
 }
