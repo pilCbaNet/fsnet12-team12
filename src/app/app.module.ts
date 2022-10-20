@@ -16,7 +16,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { MovimientosComponent } from './components/movimientos/movimientos.component';
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UltimosRetirosComponent } from './components/ultimos-retiros/ultimos-retiros.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
