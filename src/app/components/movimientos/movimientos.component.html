@@ -1,5 +1,5 @@
 <div class="container mt-3 d-flex flex-column rounded bg-white">
-  <header>
+  <header class="mt-2">
     <p style="float: right">
       <span style="font-weight: 550">Bienvenido, NOMBRE APELLIDO. <br /></span>
 
@@ -80,50 +80,51 @@
           <div class="accordion-body">
             <h4>Filtrar por</h4>
 
-            <div class="input-group mt-3 mb-2">
-              <label
-                class="input-group-text bg-dark text-light"
-                for="filtrartipo"
-                >Tipo de Operación</label
+            <form>
+              <div class="input-group mt-3 mb-2">
+                <label
+                  class="input-group-text bg-dark text-light"
+                  for="filtrartipo"
+                  >Tipo de Operación</label
+                >
+                <select class="form-select" name="filtrartipo" id="filtrartipo">
+                  <option value="" disabled selected>
+                    Seleccione el tipo de operación
+                  </option>
+                  <option value="debito">Depósito</option>
+                  <option value="retiro">Retiro</option>
+                </select>
+              </div>
+
+              <label for="filtrardesde">Fecha desde</label> :
+              <input type="date" name="filtrardesde" id="filtrardesde" />
+
+              <label for="filtrardesde">Fecha hasta</label> :
+              <input type="date" name="filtrarhasta" id="filtrarhasta" />
+              <br /><br />
+              <label for="nrooperaciones"
+                >Cantidad de operaciones a mostrar</label
               >
-              <select class="form-select" name="filtrartipo" id="filtrartipo">
-                <option value="" disabled selected>
-                  Seleccione el tipo de operación
-                </option>
-                <option value="debito">Depósito</option>
-                <option value="retiro">Retiro</option>
-              </select>
-            </div>
-
-            <label for="filtrardesde">Fecha desde</label> :
-            <input type="date" name="filtrardesde" id="filtrardesde" />
-
-            <label for="filtrardesde">Fecha hasta</label> :
-            <input type="date" name="filtrarhasta" id="filtrarhasta" />
-            <br /><br />
-            <label for="nrooperaciones"
-              >Cantidad de operaciones a mostrar</label
-            >
-            <input
-              type="number"
-              name="nrooperaciones"
-              id="nrooperaciones"
-              min="0"
-              value="10"
-              max="30"
-              step="1"
-            />
-            <br />
-            <span class="button_row">
               <input
-                type="button"
-                class="btn btn-outline-primary"
-                value="Buscar" />
-              <input
-                type="button"
-                class="btn btn-outline-secondary"
-                value="Descargar"
-            /></span>
+                type="number"
+                name="nrooperaciones"
+                id="nrooperaciones"
+                min="0"
+                value="10"
+                max="30"
+                step="1"
+              />
+              <br />
+              <span class="button_row">
+                <button class="btn btn-outline-primary" (click)="sortList()">
+                  Buscar
+                </button>
+                <input
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  value="Descargar"
+              /></span>
+            </form>
           </div>
         </div>
       </div>
@@ -132,7 +133,14 @@
     <table class="table table-hover">
       <thead>
         <tr class="bg-warning">
-          <th scope="col">Fecha</th>
+          <th scope="col">
+            Fecha
+            <i
+              class="fa fa-sort"
+              aria-hidden="true"
+              (click)="sortListByDate()"
+            ></i>
+          </th>
           <th scope="col">Descripción</th>
           <th scope="col">Importe</th>
           <th scope="col">Saldo</th>
@@ -144,7 +152,17 @@
           <tr data-bs-toggle="modal" data-bs-target="#movementsModal">
             <th scope="row">{{ item.date }}</th>
             <td>{{ item.description }}</td>
-            <td style="color: red">{{ item.mount }}</td>
+            <td>
+              <div
+                *ngIf="item.type == 'Deposit'; then thenBlock; else elseBlock"
+              ></div>
+              <ng-template #thenBlock>
+                <span style="color: rgb(11, 161, 11)">${{ item.mount }}</span>
+              </ng-template>
+              <ng-template #elseBlock>
+                <span style="color: red">-${{ item.mount }}</span></ng-template
+              >
+            </td>
             <td>$3256</td>
             <td>Link</td>
           </tr>

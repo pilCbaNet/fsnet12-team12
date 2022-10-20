@@ -14,6 +14,7 @@ export class MovimientosComponent implements OnInit {
       description: 'Deposit cash',
       accountNumber: '1234567890',
       accountName: 'Fernando Yañez',
+      type: 'Deposit',
     },
     {
       id: 2,
@@ -22,6 +23,7 @@ export class MovimientosComponent implements OnInit {
       description: 'Transfer cash',
       accountNumber: '1234567891',
       accountName: 'Hortensia Marrero',
+      type: 'Withdraw',
     },
     {
       id: 3,
@@ -30,11 +32,30 @@ export class MovimientosComponent implements OnInit {
       description: 'Deposit cash',
       accountNumber: '1234567892',
       accountName: 'Iratxe Sancho',
+      type: 'Deposit',
     },
   ];
   now: any = new Date();
+  sortedDesc: boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  sortList(): void {
+    alert('holachicso');
+  }
+
+  sortListByDate(): void {
+    if (this.sortedDesc) {
+      this.movimientos.sort((a: any, b: any) => {
+        return a.date.localeCompare(b.date);
+      });
+    } else {
+      this.movimientos.sort((a: any, b: any) => {
+        return b.date.localeCompare(a.date);
+      });
+    }
+    this.sortedDesc = !this.sortedDesc;
+  }
 }
