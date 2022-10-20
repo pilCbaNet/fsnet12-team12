@@ -80,43 +80,63 @@
           <div class="accordion-body">
             <h4>Filtrar por</h4>
 
-            <form>
+            <form [formGroup]="form" (ngSubmit)="sortList()">
               <div class="input-group mt-3 mb-2">
                 <label
                   class="input-group-text bg-dark text-light"
                   for="filtrartipo"
                   >Tipo de Operación</label
                 >
-                <select class="form-select" name="filtrartipo" id="filtrartipo">
+                <select
+                  class="form-select"
+                  name="filtrartipo"
+                  id="filtrartipo"
+                  formControlName="type"
+                >
                   <option value="" disabled selected>
                     Seleccione el tipo de operación
                   </option>
-                  <option value="debito">Depósito</option>
-                  <option value="retiro">Retiro</option>
+                  <option value="Deposit">Depósito</option>
+                  <option value="Withdraw">Retiro</option>
                 </select>
               </div>
 
               <label for="filtrardesde">Fecha desde</label> :
-              <input type="date" name="filtrardesde" id="filtrardesde" />
+              <input
+                type="date"
+                name="filtrardesde"
+                id="filtrardesde"
+                formControlName="since"
+              />
 
-              <label for="filtrardesde">Fecha hasta</label> :
-              <input type="date" name="filtrarhasta" id="filtrarhasta" />
+              <label for="filtrarhasta">Fecha hasta</label> :
+              <input
+                type="date"
+                name="filtrarhasta"
+                id="filtrarhasta"
+                formControlName="till"
+              />
               <br /><br />
-              <label for="nrooperaciones"
+              <label for="cantoperaciones"
                 >Cantidad de operaciones a mostrar</label
               >
               <input
                 type="number"
-                name="nrooperaciones"
-                id="nrooperaciones"
+                name="cantoperaciones"
+                id="cantoperaciones"
                 min="0"
                 value="10"
                 max="30"
                 step="1"
+                formControlName="amount"
               />
               <br />
               <span class="button_row">
-                <button class="btn btn-outline-primary" (click)="sortList()">
+                <button
+                  type="submit"
+                  class="btn btn-outline-primary"
+                  (click)="sortList()"
+                >
                   Buscar
                 </button>
                 <input

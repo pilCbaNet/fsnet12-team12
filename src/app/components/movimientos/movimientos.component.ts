@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-movimientos',
@@ -37,13 +38,36 @@ export class MovimientosComponent implements OnInit {
   ];
   now: any = new Date();
   sortedDesc: boolean = false;
+  form!: FormGroup;
 
-  constructor() {}
+  constructor(private formBuilder: FormBuilder) {
+    this.form = this.formBuilder.group({
+      type: ['', []],
+      since: ['', []],
+      till: ['', []],
+      amount: ['', []],
+    });
+  }
 
   ngOnInit(): void {}
 
   sortList(): void {
-    alert('holachicso');
+    let filterByType: string = this.form.get('type')?.value;
+    let filterByAmount: string = this.form.get('amount')?.value;
+
+    if (filterByType != '') {
+      console.log('this is the filtered type: ' + filterByType);
+      this.movimientos = this.movimientos.filter((item: any) => {
+        return item.type == filterByType;
+      });
+    }
+    if (filterByAmount != '') {
+      console.log('this is the filtered amount: ' + filterByAmount);
+      let amountNumber: Number = parseInt(filterByAmount);
+      if (amountNumber > 0) {
+        this.movimientos = this.movimientos.slice(0, amountNumber);
+      }
+    }
   }
 
   sortListByDate(): void {
