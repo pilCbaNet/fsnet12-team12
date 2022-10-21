@@ -36,9 +36,11 @@ export class MovimientosComponent implements OnInit {
       type: 'Deposit',
     },
   ];
+  reset: any;
   now: any = new Date();
   sortedDesc: boolean = false;
   form!: FormGroup;
+  arrayExpanded: any;
 
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
@@ -49,15 +51,19 @@ export class MovimientosComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.reset = this.movimientos;
+    this.arrayExpanded = this.reset.map((_: any) => false);
+  }
 
   sortList(): void {
     let filterByType: string = this.form.get('type')?.value;
     let filterByAmount: string = this.form.get('amount')?.value;
+    let newFilteredList = this.reset;
 
     if (filterByType != '') {
       console.log('this is the filtered type: ' + filterByType);
-      this.movimientos = this.movimientos.filter((item: any) => {
+      newFilteredList = newFilteredList.filter((item: any) => {
         return item.type == filterByType;
       });
     }
@@ -65,9 +71,10 @@ export class MovimientosComponent implements OnInit {
       console.log('this is the filtered amount: ' + filterByAmount);
       let amountNumber: Number = parseInt(filterByAmount);
       if (amountNumber > 0) {
-        this.movimientos = this.movimientos.slice(0, amountNumber);
+        newFilteredList = newFilteredList.slice(0, amountNumber);
       }
     }
+    this.movimientos = newFilteredList;
   }
 
   sortListByDate(): void {

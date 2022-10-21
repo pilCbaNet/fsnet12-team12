@@ -168,8 +168,8 @@
         </tr>
       </thead>
       <tbody>
-        <ng-container *ngFor="let item of movimientos">
-          <tr data-bs-toggle="modal" data-bs-target="#movementsModal">
+        <ng-container *ngFor="let item of movimientos; let i = index">
+          <tr>
             <th scope="row">{{ item.date }}</th>
             <td>{{ item.description }}</td>
             <td>
@@ -184,58 +184,58 @@
               >
             </td>
             <td>$3256</td>
-            <td>Link</td>
+            <td>
+              <button
+                class="btn btn-primary btn-sm"
+                (click)="arrayExpanded[i] = !arrayExpanded[i]"
+              >
+                Link
+              </button>
+            </td>
           </tr>
+          <div *ngIf="arrayExpanded[i]">
+            <div class="card text-center">
+              <div class="card-header">Datos de transacción</div>
+              <div class="card-body">
+                <h5 class="card-title">Operación #{{ item.id }}</h5>
+                <i class="fa fa-check mt-1 mb-5" aria-hidden="true"></i>
+                <div class="mb-4">
+                  <h5>Datos de Operación</h5>
+                  <p class="card-text">
+                    With supporting text below as a natural lead-in to
+                    additional content.
+                  </p>
+                  <p>
+                    Codigo de operacion: #00-012{{ item.id }} <br />
+                    Fecha de operacion: {{ item.date }} <br />
+                    Estado: Finalizado <br />
+                    Descripción: {{ item.description }}
+                  </p>
+                  <br />
+                  <h5>Datos de Cuenta</h5>
+                  <p>
+                    Nombre: {{ item.accountName }} <br />
+                    Número de cuenta: {{ item.accountNumber }}
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-dismiss="modal"
+                >
+                  Cerrar
+                </button>
+                <button type="button" class="btn btn-secondary">
+                  Descargar Detalle
+                </button>
+              </div>
+
+              <div class="card-footer text-muted">2 days ago</div>
+            </div>
+          </div>
         </ng-container>
       </tbody>
     </table>
-
-    <div
-      class="modal fade"
-      id="movementsModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="movementsModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="movementsModalLabel">
-              Operación #213521
-            </h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <h5>Descripción</h5>
-            <p>Depósito con débito.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">
-              Cerrar
-            </button>
-            <button type="button" class="btn btn-secondary">
-              Descargar Detalle
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <ul>
-      <li>
-        <h3>Retiro:</h3>
-        <p>fecha: 22-02-22</p>
-        <a href="detalles"><h4>ver mas detalles</h4></a>
-      </li>
-    </ul>
     <hr />
   </section>
 </div>
