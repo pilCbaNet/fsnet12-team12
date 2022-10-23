@@ -125,9 +125,51 @@
   "members": [
     {
     "id": 1,
-    "nombre": "",
-    "foto": "",
+    "nombre": "Alejo Nahuel Fernandez",
+    "foto": "../../../assets/imagenes/fotosPerfil/Alejo Fernandez.jpg",
     "linkedin": ""
-    }
+    },
+            {
+          "id": 2,
+          "nombre": "Miguel Alejandro Bazan",
+          "foto": "../../../assets/imagenes/fotosPerfil/Alejandro Bazan.jpeg",
+          "linkedin": ""
+          },
+          {
+            "id": 3,
+            "nombre": "Franco Ignacio Gual",
+            "foto": "",
+            "linkedin": ""
+            },
+            {
+              "id": 4,
+              "nombre": "Matias Andres Veron",
+              "foto": "../../../assets/imagenes/fotosPerfil/matias andres veron.jpg",
+              "linkedin": ""
+              },
+              {
+                "id": 5,
+                "nombre": "Leandro Alexis Lopez",
+                "foto": "../../../assets/imagenes/fotosPerfil/Leandro Lopez.jpg",
+                "linkedin": ""
+                },
+                {
+                  "id": 6,
+                  "nombre": "Daniela Crapa",
+                  "foto": "",
+                  "linkedin": ""
+                  },
+                  {
+                    "id": 7,
+                    "nombre": "Rodrigo Maldonado",
+                    "foto": "",
+                    "linkedin": ""
+                    },
+                    {
+                      "id": 8,
+                      "nombre": "Tania Ferreira",
+                      "foto": "../../../assets/imagenes/fotosPerfil/tania ferreira.jpg",
+                      "linkedin": ""
+                      }
 ]
 }
