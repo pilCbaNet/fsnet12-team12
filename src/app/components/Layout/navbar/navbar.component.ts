@@ -39,7 +39,7 @@ export class NavbarComponent implements OnInit {
     }
     else
     {
-      alert("INGRESE UN CAMPOS");
+      alert("INGRESE UN CAMPO VÁLIDO");
     }
 
   };
