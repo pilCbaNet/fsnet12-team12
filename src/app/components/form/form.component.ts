@@ -41,17 +41,18 @@ form:FormGroup;
 
       let login:Login= new Login(email,password)
 
-      this.myService.formRegister(login).subscribe(dataOk => {
-         document.getElementById('submit')?.click(); 
-        this.router.navigate(['form']);
-      }
-        );
+      this.myService.formRegister(login).subscribe(
+        data => {
+        /*  document.getElementById('submit')?.click();  */
+        this.router.navigate(['menu']);
+      },
+      respuestaError=>{
+        alert("Se ha producido un error")
+      })
 
 
     }
-    else{
-
-    }
+  
   }
 
 }
