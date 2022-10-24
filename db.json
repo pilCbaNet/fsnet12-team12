@@ -127,49 +127,49 @@
     "id": 1,
     "nombre": "Alejo Nahuel Fernandez",
     "foto": "../../../assets/imagenes/fotosPerfil/Alejo Fernandez.jpg",
-    "linkedin": ""
+    "linkedin": "https://www.linkedin.com/in/alejo-nahuel-fernandez-516962245/"
     },
             {
           "id": 2,
           "nombre": "Miguel Alejandro Bazan",
           "foto": "../../../assets/imagenes/fotosPerfil/Alejandro Bazan.jpeg",
-          "linkedin": ""
+          "linkedin": "https://www.linkedin.com/in/bazan-alejandro/"
           },
           {
             "id": 3,
             "nombre": "Franco Ignacio Gual",
             "foto": "",
-            "linkedin": ""
+            "linkedin": "https://www.linkedin.com/in/franco-gual-3a52601b6/"
             },
             {
               "id": 4,
               "nombre": "Matias Andres Veron",
               "foto": "../../../assets/imagenes/fotosPerfil/matias andres veron.jpg",
-              "linkedin": ""
+              "linkedin": "https://www.linkedin.com/in/matias-veron-5a1296220/"
               },
               {
                 "id": 5,
                 "nombre": "Leandro Alexis Lopez",
                 "foto": "../../../assets/imagenes/fotosPerfil/Leandro Lopez.jpg",
-                "linkedin": ""
+                "linkedin": "https://www.linkedin.com/in/leandro-alexis-lopez-3650a6224/"
                 },
                 {
                   "id": 6,
                   "nombre": "Daniela Crapa",
                   "foto": "",
-                  "linkedin": ""
+                  "linkedin": "https://www.linkedin.com/in/daniicrapa/"
                   },
                   {
                     "id": 7,
                     "nombre": "Rodrigo Maldonado",
                     "foto": "",
-                    "linkedin": ""
+                    "linkedin": "https://www.linkedin.com/in/rodrigomaldonadoabc"
                     },
                     {
                       "id": 8,
                       "nombre": "Tania Ferreira",
                       "foto": "../../../assets/imagenes/fotosPerfil/tania ferreira.jpg",
-                      "linkedin": ""
+                      "linkedin": "https://www.linkedin.com/in/ferreira-tania"
                       }
 ]
 }
