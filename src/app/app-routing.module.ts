@@ -7,6 +7,8 @@ import { OperacionesComponent } from './components/operaciones/operaciones.compo
 import { ServiciosOfrecidosComponent } from './components/servicios-ofrecidos/servicios-ofrecidos.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
+import { RetiroComponent } from './components/retiro/retiro.component';
+import { DepositoComponent } from './components/deposito/deposito.component';
 
 const routes: Routes = [
   { path: 'home', component: ServiciosOfrecidosComponent },
@@ -15,7 +17,11 @@ const routes: Routes = [
   { path: 'menu', component: MenuComponent,
     children: [
       { path: 'movimientos', component: MovimientosComponent },
-      { path: 'operaciones', component: OperacionesComponent },
+      { path: 'operaciones', component: OperacionesComponent, 
+      children: [
+        { path: 'retiros', component: RetiroComponent},
+        { path: 'depositos', component: DepositoComponent}
+      ]},
     ],
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
