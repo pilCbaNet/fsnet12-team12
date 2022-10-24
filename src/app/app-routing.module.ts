@@ -6,6 +6,7 @@ import { MovimientosComponent } from './components/movimientos/movimientos.compo
 import { OperacionesComponent } from './components/operaciones/operaciones.component';
 import { ServiciosOfrecidosComponent } from './components/servicios-ofrecidos/servicios-ofrecidos.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
 
 const routes: Routes = [
   { path: 'home', component: ServiciosOfrecidosComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
     ],
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'quienes-somos', component: QuienesSomosComponent },
 ];
 
 @NgModule({
