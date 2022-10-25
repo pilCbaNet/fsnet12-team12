@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MovimientosService } from 'app/servicios/movimientos/movimientos.service';
 
 @Component({
   selector: 'app-movimientos',
@@ -7,6 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./movimientos.component.css'],
 })
 export class MovimientosComponent implements OnInit {
+  /*
   movimientos: any = [
     {
       id: 1,
@@ -35,14 +37,18 @@ export class MovimientosComponent implements OnInit {
       accountName: 'Iratxe Sancho',
       type: 'Deposit',
     },
-  ];
+  ];*/
+  movimientos: any = [];
   reset: any;
   now: any = new Date();
   sortedDesc: boolean = false;
   form!: FormGroup;
   arrayExpanded: any;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private service: MovimientosService
+  ) {
     this.form = this.formBuilder.group({
       type: ['', []],
       since: ['', []],
@@ -52,8 +58,17 @@ export class MovimientosComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.service.obtenerMovimientos().subscribe((data) => {
+      this.movimientos = data;
+      this.reset = data;
+      this.arrayExpanded = this.reset.map((_: any) => false);
+      console.log(this.movimientos);
+    });
+
+    /*
     this.reset = this.movimientos;
     this.arrayExpanded = this.reset.map((_: any) => false);
+*/
   }
 
   sortList(): void {
@@ -64,7 +79,8 @@ export class MovimientosComponent implements OnInit {
     if (filterByType != '') {
       console.log('this is the filtered type: ' + filterByType);
       newFilteredList = newFilteredList.filter((item: any) => {
-        return item.type == filterByType;
+        //return item.type == filterByType;
+        return item.description.split(' ')[0] == filterByType;
       });
     }
     if (filterByAmount != '') {

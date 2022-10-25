@@ -98,6 +98,7 @@
                   </option>
                   <option value="Deposit">Depósito</option>
                   <option value="Withdraw">Retiro</option>
+                  <option value="Transfer">Transferencia</option>
                 </select>
               </div>
 
@@ -174,7 +175,11 @@
             <td>{{ item.description }}</td>
             <td>
               <div
-                *ngIf="item.type == 'Deposit'; then thenBlock; else elseBlock"
+                *ngIf="
+                  item.description == 'Deposit cash';
+                  then thenBlock;
+                  else elseBlock
+                "
               ></div>
               <ng-template #thenBlock>
                 <span style="color: rgb(11, 161, 11)">${{ item.mount }}</span>
