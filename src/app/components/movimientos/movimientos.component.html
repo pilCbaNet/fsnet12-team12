@@ -62,7 +62,7 @@
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingTwo">
           <button
-            class="accordion-button collapsed bg-warning"
+            class="accordion-button bg-warning"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#collapseTwo"
@@ -74,7 +74,7 @@
         </h2>
         <div
           id="collapseTwo"
-          class="accordion-collapse collapse"
+          class="accordion-collapse collapse show"
           aria-labelledby="headingTwo"
         >
           <div class="accordion-body">
@@ -121,6 +121,7 @@
               <label for="cantoperaciones"
                 >Cantidad de operaciones a mostrar</label
               >
+              :
               <input
                 type="number"
                 name="cantoperaciones"
@@ -208,24 +209,24 @@
                   <div class="mb-4">
                     <h5>Datos de Operación</h5>
                     <p class="card-text">
-                      With supporting text below as a natural lead-in to
-                      additional content.
+                      La transacción fue llevada a cabo con exito.
                     </p>
                     <p>
-                      Codigo de operacion: #00-012{{ item.id }} <br />
-                      Fecha de operacion: {{ item.date }} <br />
-                      Monto: ${{ item.mount }} <br />
-                      Moneda: USD/ARS <br />
-                      Estado: Finalizado
+                      Codigo de operacion: <b> #00-012{{ item.id }}</b> <br />
+                      Fecha de operacion: <b>{{ item.date }}</b> <br />
+                      Monto: <b> ${{ item.mount }}</b> <br />
+                      Moneda: <b>USD/ARS</b> <br />
+                      Estado: <b>Finalizado</b>
                       <br />
-                      Descripción: {{ item.description }}
+                      Descripción: <b>{{ item.description }}</b>
                     </p>
                     <br />
                     <h5>Datos de Cuenta</h5>
                     <p>
-                      Nombre: {{ item.accountName }} <br />
-                      Número de cuenta: {{ item.accountNumber }} <br />
-                      Saldo restante: $3256
+                      Nombre: <b>{{ item.accountName }}</b
+                      ><br />
+                      Número de cuenta: <b>{{ item.accountNumber }}</b> <br />
+                      Saldo restante: <b>$3256</b>
                     </p>
                   </div>
                   <button
@@ -236,7 +237,7 @@
                     Cerrar
                   </button>
                   <button type="button" class="btn btn-secondary">
-                    Descargar Detalle
+                    Descargar Comprobante
                   </button>
                 </div>
 
@@ -248,5 +249,6 @@
       </tbody>
     </table>
     <hr />
+    <br />
   </section>
 </div>
