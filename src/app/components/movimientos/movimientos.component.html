@@ -62,7 +62,7 @@
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingTwo">
           <button
-            class="accordion-button bg-warning"
+            class="accordion-button collapsed bg-warning"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#collapseTwo"
@@ -74,7 +74,7 @@
         </h2>
         <div
           id="collapseTwo"
-          class="accordion-collapse collapse show"
+          class="accordion-collapse collapse"
           aria-labelledby="headingTwo"
         >
           <div class="accordion-body">
@@ -209,7 +209,7 @@
                   <div class="mb-4">
                     <h5>Datos de Operación</h5>
                     <p class="card-text">
-                      La transacción fue llevada a cabo con exito.
+                      La transacción fue llevada a cabo con éxito.
                     </p>
                     <p>
                       Codigo de operacion: <b> #00-012{{ item.id }}</b> <br />
@@ -233,11 +233,9 @@
                     type="button"
                     class="btn btn-danger"
                     data-dismiss="modal"
+                    (click)="arrayExpanded[i] = !arrayExpanded[i]"
                   >
                     Cerrar
-                  </button>
-                  <button type="button" class="btn btn-secondary">
-                    Descargar Comprobante
                   </button>
                 </div>
 
