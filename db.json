@@ -203,13 +203,13 @@
     {
       "id": 6,
       "nombre": "Daniela Crapa",
-      "foto": "",
+      "foto": "../../../assets/images/fotosPerfil/DanielaCrapaDuarte.jpeg",
       "linkedin": "https://www.linkedin.com/in/daniicrapa/"
     },
     {
       "id": 7,
       "nombre": "Rodrigo Maldonado",
-      "foto": "",
+      "foto": "../../../assets/images/fotosPerfil/Rodrigo Maldonado.jpeg",
       "linkedin": "https://www.linkedin.com/in/rodrigomaldonadoabc"
     },
     {
