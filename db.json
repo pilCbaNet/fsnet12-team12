@@ -233,5 +233,12 @@
       "foto": "../../../assets/images/fotosPerfil/tania ferreira.jpg",
       "linkedin": "https://www.linkedin.com/in/ferreira-tania"
     }
+  ],
+  "cuentas": [
+    {
+      "usuario": "juancarlos@gmail.com",
+      "numeroDeCuenta": 2126427895,
+      "saldo": 10000
+    }
   ]
 }
