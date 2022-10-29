@@ -19,11 +19,6 @@
       "email": "ama@aa.com",
       "password": "aaasd",
       "id": 4
-    },
-    {
-      "email": "rodrimaldo@hotmail.es",
-      "password": "asdasd",
-      "id": 5
     }
   ],
   "comments": [
@@ -208,13 +203,13 @@
     {
       "id": 6,
       "nombre": "Daniela Crapa",
-      "foto": "",
+      "foto": "../../../assets/images/fotosPerfil/DanielaCrapaDuarte.jpeg",
       "linkedin": "https://www.linkedin.com/in/daniicrapa/"
     },
     {
       "id": 7,
       "nombre": "Rodrigo Maldonado",
-      "foto": "",
+      "foto": "../../../assets/images/fotosPerfil/Rodrigo Maldonado.jpeg",
       "linkedin": "https://www.linkedin.com/in/rodrigomaldonadoabc"
     },
     {
@@ -222,6 +217,13 @@
       "nombre": "Tania Ferreira",
       "foto": "../../../assets/images/fotosPerfil/tania ferreira.jpg",
       "linkedin": "https://www.linkedin.com/in/ferreira-tania"
+    }
+  ],
+  "cuentas": [
+    {
+      "usuario": "juancarlos@gmail.com",
+      "numeroDeCuenta": 2126427895,
+      "saldo": 10000
     }
   ]
 }
