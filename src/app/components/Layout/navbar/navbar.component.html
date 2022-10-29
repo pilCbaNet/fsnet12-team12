@@ -2,7 +2,18 @@
   <div class="container-fluid">
     <div class="position-relative">
       <a class="navbar-brand brand-position">Team L </a>
-      <img routerLink="home" src="../../../assets/images/logo-teaml.png" alt="" />
+      <img
+        routerLink="home"
+        src="../../../assets/images/logo-teaml.png"
+        alt=""
+      />
+      <button
+        class="btn btn-dark me-2"
+        style="border-radius: 0px"
+        routerLink="/quienes-somos"
+      >
+        Quienes somos
+      </button>
     </div>
     <form onsubmit="event.preventDefault();" class="d-flex" role="search">
       <button
@@ -14,7 +25,12 @@
       >
         Iniciar Sesion
       </button>
-      <button routerLink="/form" class="btn btn-warning" style="border-radius: 0px" type="submit">
+      <button
+        routerLink="/form"
+        class="btn btn-warning"
+        style="border-radius: 0px"
+        type="submit"
+      >
         Registrarse
       </button>
     </form>
@@ -41,9 +57,9 @@
         ></button>
       </div>
       <div class="modal-body">
-        <form class="form-control"  [formGroup]="form">
+        <form class="form-control" [formGroup]="form">
           <div class="mb-3 row">
-            <label for="staticEmail" class="col-sm-3 col-form-label" 
+            <label for="staticEmail" class="col-sm-3 col-form-label"
               >Email</label
             >
             <div class="col-sm-10">
@@ -54,22 +70,23 @@
                 placeholder="email@example.com"
                 formControlName="email"
               />
-          </div>
+            </div>
           </div>
           <div class="mb-3 row">
             <label for="inputPassword" class="col-sm-3 col-form-label"
               >Contraseña</label
             >
             <div class="col-sm-10">
-              <input type="password" 
-              class="form-control"
-              formControlName="pass"
-               id="inputPassword" />
+              <input
+                type="password"
+                class="form-control"
+                formControlName="pass"
+                id="inputPassword"
+              />
             </div>
           </div>
         </form>
       </div>
-
 
       <div class="modal-footer">
         <button
@@ -86,7 +103,8 @@
           style="border-radius: 0px"
           class="btn btn-warning"
           data-bs-dismiss="modal"
-          (click)="login()" routerLink="/dashboard"
+          (click)="login()"
+          routerLink="/dashboard"
         >
           Iniciar
         </button>

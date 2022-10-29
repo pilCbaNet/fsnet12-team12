@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { FormComponent } from './components/form/form.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { MovimientosComponent } from './components/movimientos/movimientos.component';
@@ -12,17 +12,17 @@ import { DepositoComponent } from './components/deposito/deposito.component';
 
 const routes: Routes = [
   { path: 'home', component: ServiciosOfrecidosComponent },
-  { path:'form', component: FormComponent},
-  { path: 'dashboard', component: DashboardComponent},
-  { path: 'menu', component: MenuComponent,
-    children: [
-      { path: 'movimientos', component: MovimientosComponent },
-      { path: 'operaciones', component: OperacionesComponent, 
-      children: [
-        { path: 'retiros', component: RetiroComponent},
-        { path: 'depositos', component: DepositoComponent}
-      ]},
-    ],
+  { path: 'form', component: FormComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  {
+    path: 'operaciones',
+    component: OperacionesComponent,
+  },
+  { path: 'retiros', component: RetiroComponent },
+  { path: 'depositos', component: DepositoComponent },
+  {
+    path: 'menu',
+    component: MenuComponent,
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'quienes-somos', component: QuienesSomosComponent },

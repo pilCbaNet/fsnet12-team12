@@ -7,52 +7,51 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
-form:FormGroup;
+  form: FormGroup;
 
-  constructor(private formBuilder:FormBuilder, private myService:FormRegisterService, private router:Router) {
-    this.form=this.formBuilder.group({
-      email:["", [Validators.required, Validators.email]],
-      password: ["", [Validators.required,Validators.maxLength(8),Validators.minLength(5) ]]
-    })
-   }
-
-   get email()
-   {
-    return this.form.get("email");
-   }
-
-   get password()
-   {
-    return this.form.get("password")
-   }
-
-  ngOnInit(): void {
+  constructor(
+    private formBuilder: FormBuilder,
+    private myService: FormRegisterService,
+    private router: Router
+  ) {
+    this.form = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: [
+        '',
+        [Validators.required, Validators.maxLength(8), Validators.minLength(5)],
+      ],
+    });
   }
 
-  register()
-  {
-    if(this.form.valid)
-    {
-      let email:string=this.form.get('email')?.value;
-      let password:string=this.form.get('password')?.value;
+  get email() {
+    return this.form.get('email');
+  }
 
-      let login:Login= new Login(email,password)
+  get password() {
+    return this.form.get('password');
+  }
+
+  ngOnInit(): void {}
+
+  register() {
+    if (this.form.valid) {
+      let email: string = this.form.get('email')?.value;
+      let password: string = this.form.get('password')?.value;
+
+      let login: Login = new Login(email, password);
 
       this.myService.formRegister(login).subscribe(
-        data => {
-        /*  document.getElementById('submit')?.click();  */
-        this.router.navigate(['menu']);
-      },
-      respuestaError=>{
-        alert("Se ha producido un error")
-      })
-
-
+        (data) => {
+          /*  document.getElementById('submit')?.click();  */
+          this.router.navigate(['operaciones']);
+        },
+        (respuestaError) => {
+          alert('Se ha producido un error');
+        }
+      );
     }
-  
   }
-
 }
