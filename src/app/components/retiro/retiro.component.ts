@@ -22,8 +22,8 @@ export class RetiroComponent implements OnInit {
     });
   }
   deposit() {
-    let date: string = '24/10/2022';
-    let mount: number = 1000 ;
+    let date = new Date();
+    let mount: number = 1000;
 
     let description: string = 'Withdraw cash';
     let accountNumber = '1234567890';
@@ -36,10 +36,14 @@ export class RetiroComponent implements OnInit {
       accountNumber,
       accountName
     );
+    this.redirect();
 
     this.service.guardarRetiro(retiro).subscribe((dataOk) => {
       console.log('retiro');
       this.router.navigate(['retiro']);
     });
+  }
+  redirect() {
+    this.router.navigate(['dashboard']);
   }
 }

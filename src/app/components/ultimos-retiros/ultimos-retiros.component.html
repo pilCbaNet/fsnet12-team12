@@ -1,4 +1,4 @@
-<div class="container mt-3 d-flex flex-column rounded bg-white">
+<div class="container mt-3 d-flex flex-column rounded bg-white mb-3">
   <h3 class="text-center">Ultimos Retiros</h3>
   <table class="table table-hover">
     <thead>
@@ -7,7 +7,6 @@
         <th scope="col">Descripción</th>
         <th scope="col">Importe</th>
         <th scope="col">Saldo</th>
-        <th scope="col">Ver detalle</th>
       </tr>
     </thead>
     <tbody *ngFor="let deposito of depositosOrdenados">
@@ -17,9 +16,9 @@
           <td>{{ deposito.description }}</td>
           <td style="color: red">- ${{ deposito.mount }}</td>
           <td>- ${{ deposito.saldo }}</td>
-          <td>Link</td>
         </tr>
       </ng-container>
     </tbody>
   </table>
+  <button class="btn btn-warning" routerLink="/dashboard">Volver</button>
 </div>

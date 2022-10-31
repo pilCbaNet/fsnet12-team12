@@ -9,11 +9,13 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
 import { RetiroComponent } from './components/retiro/retiro.component';
 import { DepositoComponent } from './components/deposito/deposito.component';
+import { UltimosRetirosComponent } from './components/ultimos-retiros/ultimos-retiros.component';
 
 const routes: Routes = [
   { path: 'home', component: ServiciosOfrecidosComponent },
   { path: 'form', component: FormComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'ultimos-retiros', component: UltimosRetirosComponent },
   {
     path: 'operaciones',
     component: OperacionesComponent,
