@@ -46,7 +46,7 @@ export class FormComponent implements OnInit {
       this.myService.formRegister(login).subscribe(
         (data) => {
           /*  document.getElementById('submit')?.click();  */
-          this.router.navigate(['operaciones']);
+          this.router.navigate(['dashboard']);
         },
         (respuestaError) => {
           alert('Se ha producido un error');

@@ -18,11 +18,12 @@ export class RetiroComponent implements OnInit {
   ngOnInit(): void {
     this.service.obtenerMovimientos().subscribe((data) => {
       this.movimientos = data;
-      console.log(this.movimientos);
     });
   }
   deposit() {
-    let date = new Date();
+    let today = new Date();
+    let date = today.toLocaleString('es-AR');
+
     let mount: number = 1000;
 
     let description: string = 'Withdraw cash';
@@ -39,7 +40,6 @@ export class RetiroComponent implements OnInit {
     this.redirect();
 
     this.service.guardarRetiro(retiro).subscribe((dataOk) => {
-      console.log('retiro');
       this.router.navigate(['retiro']);
     });
   }
