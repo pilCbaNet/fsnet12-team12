@@ -232,6 +232,12 @@
       "nombre": "Tania Ferreira",
       "foto": "../../../assets/images/fotosPerfil/tania ferreira.jpg",
       "linkedin": "https://www.linkedin.com/in/ferreira-tania"
+    },
+    {
+      "id": 9,
+      "nombre": "Mauricio Torres",
+      "foto": "../../../assets/images/fotosPerfil/Mauricio-torres.jpg",
+      "linkedin": "https://www.linkedin.com/in/mauricio-torres-ab25a0204/"
     }
   ],
   "cuentas": [
