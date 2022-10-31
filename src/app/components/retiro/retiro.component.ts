@@ -18,12 +18,13 @@ export class RetiroComponent implements OnInit {
   ngOnInit(): void {
     this.service.obtenerMovimientos().subscribe((data) => {
       this.movimientos = data;
-      console.log(this.movimientos);
     });
   }
   deposit() {
-    let date: string = '24/10/2022';
-    let mount: number = 1000 ;
+    let today = new Date();
+    let date = today.toLocaleString('es-AR');
+
+    let mount: number = 1000;
 
     let description: string = 'Withdraw cash';
     let accountNumber = '1234567890';
@@ -36,10 +37,13 @@ export class RetiroComponent implements OnInit {
       accountNumber,
       accountName
     );
+    this.redirect();
 
     this.service.guardarRetiro(retiro).subscribe((dataOk) => {
-      console.log('retiro');
       this.router.navigate(['retiro']);
     });
+  }
+  redirect() {
+    this.router.navigate(['dashboard']);
   }
 }

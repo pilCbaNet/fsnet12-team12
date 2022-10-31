@@ -185,7 +185,7 @@
     {
       "id": 3,
       "nombre": "Franco Ignacio Gual",
-      "foto": "",
+      "foto": "../../../assets/images/fotosPerfil/Franco Gual.jpg",
       "linkedin": "https://www.linkedin.com/in/franco-gual-3a52601b6/"
     },
     {
@@ -217,6 +217,12 @@
       "nombre": "Tania Ferreira",
       "foto": "../../../assets/images/fotosPerfil/tania ferreira.jpg",
       "linkedin": "https://www.linkedin.com/in/ferreira-tania"
+    },
+    {
+      "id": 9,
+      "nombre": "Mauricio Torres",
+      "foto": "../../../assets/images/fotosPerfil/Mauricio-torres.jpg",
+      "linkedin": "https://www.linkedin.com/in/mauricio-torres-ab25a0204/"
     }
   ],
   "cuentas": [

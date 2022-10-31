@@ -61,7 +61,7 @@ export class UltimosRetirosComponent implements OnInit {
       }
       this.depositosOrdenados.unshift(item);
     }
-    console.log(this.depositosOrdenados);
+
     return this.depositosOrdenados;
   }
 }
