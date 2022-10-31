@@ -24,7 +24,7 @@
           </div>
 
           <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="text-warning">
-            <div *ngIf="password?.errors?.['']">La Contraseña es requerida</div>
+            <div *ngIf="password?.errors?.['required']">La Contraseña es requerida</div>
             <div *ngIf="password?.errors?.['maxlength']">La contraseña debe tener maximo 8 caracteres, de cualquier tipo. </div>
             <div *ngIf="password?.errors?.['minlength']">La contraseña debe minimo 5 caracteres. </div>
             </div>
