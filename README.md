@@ -11,6 +11,6 @@ ng g c component/nombredelcomponentequevamosacrear
 
 una carpeta service donde se guardan todos los servicios. Para crear servicios usar:
 
-ng g s service/nombredelservicioquevamosacrear
+ng g s servicios/nombredelservicioquevamosacrear
 
 ### -Sin importar el largo del nombre, es importante que al definir cada clase sea representativo del rol que va a cumplir.-
