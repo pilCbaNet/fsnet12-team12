@@ -1,5 +1,3 @@
-
-
 <body class="loginBody">
   <div class="wrapper fadeInDown">
     <div id="formContent">
@@ -13,9 +11,19 @@
 
       <!-- Login Form -->
       <form [formGroup]="form">
-        <input type="email" formControlName="email" id="user" class="fadeIn second" name="register" placeholder="Email">
+        <input type="text" formControlName="usuario" id="user" class="fadeIn second" name="usuario" placeholder="Usuario">
+        <input type="email" formControlName="email" id="user" class="fadeIn second" name="email" placeholder="Email">
         <input type="password" formControlName="password" id="password"  class="fadeIn third" name="register"
           placeholder="Contraseña">
+          <input type="password" formControlName="password" id="password"  class="fadeIn third" name="register"
+          placeholder="Repita su contraseña">
+            <h3>Datos personales</h3>
+            <input type="text" formControlName="dni" id="user" class="fadeIn second" name="dni" placeholder="Dni">
+            <input type="text" formControlName="domicilio" id="user" class="fadeIn second" name="domicilio" placeholder="Domicilio">
+            <input type="tel" formControlName="telefono" id="user" class="fadeIn second" name="teléfono" placeholder="Teléfono"> 
+            <p class="fecha">Fecha de nacimiento</p> 
+            <input type="date" min="1900-01-01" max="2022-11-01" formControlName="fecha" id="user" class="fadeIn second" name="fecha" placeholder="Fecha de nacimiento">
+
         <input type="submit" (click)="register()" id="submit" class="fadeIn fourth" value="Registrate">
 
         <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-warning">
