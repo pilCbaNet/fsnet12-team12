@@ -3,8 +3,8 @@
   font-family: "Poppins", sans-serif;
   height: 100vh;
   background:#ffc107;
+  margin-bottom: 18%;
 }
-
 
 
 h2 {
@@ -51,7 +51,7 @@ h3 {
   padding: 30px;
   width: 90%;
   max-width: 450px;
-  position: relative;
+  position:relative ;
   padding: 0px;
   -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
@@ -139,13 +139,14 @@ input[type=email]:focus,input[type=password]:focus, input[type=text]:focus, inpu
 
 /* Simple CSS3 Fade-in-down Animation */
 .fadeInDown {
-  /* -webkit-animation-name: fadeInDown;
+  -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
-  animation-fill-mode: both; */
-}
+  animation-fill-mode: both;
+  background-color: #ffc107; 
+} 
 
 @-webkit-keyframes fadeInDown {
   0% {
