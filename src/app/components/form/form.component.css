@@ -16,6 +16,19 @@
     display:inline-block;
     margin: 40px 8px 20px 8px; 
   }
+
+  h3 {
+    color:#ffc107;
+    text-align: center;
+    font-size: 20px;
+    margin: 20px 8px 20px 8px; 
+  }
+
+  .fecha {
+    color:lightgray;
+    text-align: center;
+    margin: 10px 8px 1px 8px; 
+  }
   
   
   
@@ -62,7 +75,7 @@
   
   /* FORM TYPOGRAPHY*/
   
-  input[type=button], input[type=submit], input[type=reset]  {
+  input[type=button], input[type=submit], input[type=reset]   {
     background-color: #ffc107;
     border:none;
     color: white;
@@ -76,7 +89,7 @@
     box-shadow: 0 10px 30px 0 #ffc107;
     -webkit-border-radius: 5px 5px 5px 5px;
     border-radius: 5px 5px 5px 5px;
-    margin: 5px 20px 30px 20px;
+    margin: 15px 20px 30px 20px;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
@@ -95,7 +108,7 @@
     transform: scale(0.95);
   } 
   
-  input[type=email], input[type=password] {
+  input[type=email], input[type=password],input[type=number],input[type=text], input[type=tel], input[type=date] {
     background-color: gray;
     border: none;
     color:black ;
@@ -116,7 +129,7 @@
     border-radius: 5px 5px 5px 5px;
   }
   
-  input[type=email]:focus,input[type=password]:focus {
+  input[type=email]:focus,input[type=password]:focus, input[type=text]:focus, input[type=number]:focus,input[type=tel]:focus, input[type=date]:focus {
     background-color: #fff;
     border-bottom: 2px solid rgba(33, 38, 41, 0.4);
   }
@@ -126,12 +139,12 @@
   
   /* Simple CSS3 Fade-in-down Animation */
   .fadeInDown {
-    -webkit-animation-name: fadeInDown;
+    /* -webkit-animation-name: fadeInDown;
     animation-name: fadeInDown;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+    animation-fill-mode: both; */
   }
   
   @-webkit-keyframes fadeInDown {
