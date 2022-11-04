@@ -9,6 +9,9 @@ import { DepositoService } from 'app/servicios/deposito/deposito.service';
   styleUrls: ['./deposito.component.css']
 })
 export class DepositoComponent implements OnInit {
+  getRandom(): void {
+    alert(Math.round(Math.random() * 1000));
+  }
 
   cuentas:any = [];
   form:FormGroup
