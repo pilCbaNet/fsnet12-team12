@@ -15,3 +15,14 @@ h3{
 .tarJ{
     text-align: center;
 }
+
+#cripto{
+    clip-path: inset(35% 0 25% 0);
+    position: top;
+    
+}
+
+#crip{
+    height: 60%;
+
+}
