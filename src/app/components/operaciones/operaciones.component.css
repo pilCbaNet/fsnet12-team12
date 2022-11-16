@@ -18,11 +18,27 @@ h3{
 
 #cripto{
     clip-path: inset(35% 0 25% 0);
-    position: top;
-    
+    margin-bottom: -46.5%;
+    top: -30%;
+}
+
+.img-thumbnail{
+    position:relative;
+    padding-bottom: 30%;
 }
 
 #crip{
-    height: 60%;
+    height: 83%;
+}
+
+#cri{
+    position: relative;
+    bottom: 20%;
 
 }
+
+#boton{
+    position:relative;
+    top: -20%;
+}
+
