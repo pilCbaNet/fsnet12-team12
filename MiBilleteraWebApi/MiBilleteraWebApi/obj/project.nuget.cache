@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "6KIUlZjOr5XzW3U6FJAh7tN+4f5bxgBbIxJxrC3JECQ8LzzcOqCQqIZFw5He4sZnRRghekO0x36NTI+ZC65ryQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Franco\\source\\repos\\fsnet12-team12\\MiBilleteraWebApi\\MiBilleteraWebApi\\MiBilleteraWebApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Franco\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Franco\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Franco\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\Franco\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\Franco\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\Franco\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
