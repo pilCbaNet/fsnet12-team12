@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MiBilleteraWebApi.Models
+namespace Entities
 {
     public partial class VistaRetiro
     {
