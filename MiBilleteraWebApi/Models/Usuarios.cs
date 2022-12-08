@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace MiBilleteraWebApi.Models
 {
-    public partial class Usuario
+    public partial class Usuarios
     {
-        public Usuario()
+        public Usuarios()
         {
-            Operaciones = new HashSet<Operacione>();
+            Operaciones = new HashSet<Operaciones>();
         }
 
         public int IdUsuario { get; set; }
@@ -24,6 +24,6 @@ namespace MiBilleteraWebApi.Models
         public string Dni { get; set; } = null!;
         public int IdCuenta { get; set; }
 
-        public virtual ICollection<Operacione> Operaciones { get; set; }
+        public virtual ICollection<Operaciones> Operaciones { get; set; }
     }
 }

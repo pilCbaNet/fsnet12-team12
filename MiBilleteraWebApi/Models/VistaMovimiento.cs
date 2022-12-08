@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MiBilleteraWebApi.Models
 {
-    public partial class Movimiento
+    public partial class VistaMovimiento
     {
         public int IdOperaciones { get; set; }
         public DateTime Fecha { get; set; }

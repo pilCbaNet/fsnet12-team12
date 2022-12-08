@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MiBilleteraWebApi.Models
 {
-    public partial class Operacione
+    public partial class Operaciones
     {
         public int IdOperaciones { get; set; }
         public decimal Monto { get; set; }
@@ -13,6 +13,6 @@ namespace MiBilleteraWebApi.Models
         public string DniRetiro { get; set; } = null!;
 
         public virtual TipoOperacion IdTipoOperacionNavigation { get; set; } = null!;
-        public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
+        public virtual Usuarios IdUsuarioNavigation { get; set; } = null!;
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MiBilleteraWebApi.Models
 {
-    public partial class Deposito
+    public partial class VistaDeposito
     {
         public decimal Monto { get; set; }
     }

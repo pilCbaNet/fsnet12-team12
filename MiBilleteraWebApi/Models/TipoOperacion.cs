@@ -7,12 +7,12 @@ namespace MiBilleteraWebApi.Models
     {
         public TipoOperacion()
         {
-            Operaciones = new HashSet<Operacione>();
+            Operaciones = new HashSet<Operaciones>();
         }
 
         public int IdTipoOperacion { get; set; }
         public string Descripcion { get; set; } = null!;
 
-        public virtual ICollection<Operacione> Operaciones { get; set; }
+        public virtual ICollection<Operaciones> Operaciones { get; set; }
     }
 }

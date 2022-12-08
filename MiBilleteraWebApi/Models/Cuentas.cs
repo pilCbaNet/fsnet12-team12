@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MiBilleteraWebApi.Models
 {
-    public partial class Cuenta
+    public partial class Cuentas
     {
         public int IdCuenta { get; set; }
         public int Saldo { get; set; }

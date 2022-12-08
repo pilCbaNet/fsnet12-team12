@@ -16,15 +16,15 @@ namespace MiBilleteraWebApi.Models
         {
         }
 
-        public virtual DbSet<Cuenta> Cuentas { get; set; } = null!;
-        public virtual DbSet<Deposito> Depositos { get; set; } = null!;
-        public virtual DbSet<LoginUsuario> LoginUsuarios { get; set; } = null!;
-        public virtual DbSet<Movimiento> Movimientos { get; set; } = null!;
-        public virtual DbSet<Operacione> Operaciones { get; set; } = null!;
+        public virtual DbSet<Cuentas> Cuentas { get; set; } = null!;
+        public virtual DbSet<VistaDeposito> Depositos { get; set; } = null!;
+        public virtual DbSet<VistaLoginUsuario> LoginUsuarios { get; set; } = null!;
+        public virtual DbSet<VistaMovimiento> Movimientos { get; set; } = null!;
+        public virtual DbSet<Operaciones> Operaciones { get; set; } = null!;
         public virtual DbSet<RegistroUsuario> RegistroUsuarios { get; set; } = null!;
-        public virtual DbSet<Retiro> Retiros { get; set; } = null!;
+        public virtual DbSet<VistaRetiro> Retiros { get; set; } = null!;
         public virtual DbSet<TipoOperacion> TipoOperacions { get; set; } = null!;
-        public virtual DbSet<Usuario> Usuarios { get; set; } = null!;
+        public virtual DbSet<Usuarios> Usuarios { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -37,7 +37,7 @@ namespace MiBilleteraWebApi.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Cuenta>(entity =>
+            modelBuilder.Entity<Cuentas>(entity =>
             {
                 entity.HasKey(e => e.IdCuenta);
 
@@ -48,7 +48,7 @@ namespace MiBilleteraWebApi.Models
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Deposito>(entity =>
+            modelBuilder.Entity<VistaDeposito>(entity =>
             {
                 entity.HasNoKey();
 
@@ -57,7 +57,7 @@ namespace MiBilleteraWebApi.Models
                 entity.Property(e => e.Monto).HasColumnType("money");
             });
 
-            modelBuilder.Entity<LoginUsuario>(entity =>
+            modelBuilder.Entity<VistaLoginUsuario>(entity =>
             {
                 entity.HasNoKey();
 
@@ -72,7 +72,7 @@ namespace MiBilleteraWebApi.Models
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Movimiento>(entity =>
+            modelBuilder.Entity<VistaMovimiento>(entity =>
             {
                 entity.HasNoKey();
 
@@ -87,7 +87,7 @@ namespace MiBilleteraWebApi.Models
                 entity.Property(e => e.Monto).HasColumnType("money");
             });
 
-            modelBuilder.Entity<Operacione>(entity =>
+            modelBuilder.Entity<Operaciones>(entity =>
             {
                 entity.HasKey(e => e.IdOperaciones);
 
@@ -161,7 +161,7 @@ namespace MiBilleteraWebApi.Models
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Retiro>(entity =>
+            modelBuilder.Entity<VistaRetiro>(entity =>
             {
                 entity.HasNoKey();
 
@@ -186,7 +186,7 @@ namespace MiBilleteraWebApi.Models
                 entity.Property(e => e.Descripcion).HasMaxLength(50);
             });
 
-            modelBuilder.Entity<Usuario>(entity =>
+            modelBuilder.Entity<Usuarios>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
                     .HasName("PK_Usuarios1");
