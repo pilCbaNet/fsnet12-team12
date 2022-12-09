@@ -1,17 +1,19 @@
-﻿using System;
-using Entities;
+﻿using Entities;
+using System;
 using System.Collections.Generic;
-using Linq;
-using Text;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-public class UsuarioBD
+namespace Negocio
 {
-	public UsuarioBD()
-	{
-		public Usuarios login(MiBilleteraContext bd, string Email, string Contraseña)
-		{
-			return (Usuarios?) bd.Usuarios.FirstOrDefault(a => a.Email == Email && a.Contraseña == Contraseña)
-		}
-	}
+    public class UsuarioBD
+    {
+        MiBilleteraContext bd = new MiBilleteraContext();
+       public List<Usuarios> ListarUsuarios()
+        {
+            return bd.Usuarios.ToList();
+        }
+
+    }
 }

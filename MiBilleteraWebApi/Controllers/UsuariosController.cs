@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Entities;
+using Microsoft.AspNetCore.Mvc;
+using Negocio;
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,36 +11,55 @@ namespace MiBilleteraWebApi.Controllers
     [ApiController]
     public class UsuariosController : ControllerBase
     {
-        // GET: api/<UsuariosController>
+        // GET: OBTENER USUARIOS
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<Usuarios> Get()
         {
-            return new string[] { "value1", "value2" };
+         
+            return new UsuarioBD().ListarUsuarios();
+            
         }
 
-        // GET api/<UsuariosController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<UsuariosController>
+        // POST AGREGAR USUARIO
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Usuarios oUsuarios)
         {
+            using (var db = new MiBilleteraContext())
+            {
+                db.Usuarios.Add(oUsuarios);
+                db.SaveChanges();
+            }
         }
+        //// GET: api/<UsuariosController>
+        //[HttpGet]
+        //public IEnumerable<string> Get()
+        //{
+        //    return new string[] { "value1", "value2" };
+        //}
 
-        // PUT api/<UsuariosController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        //// GET api/<UsuariosController>/5
+        //[HttpGet("{id}")]
+        //public string Get(int id)
+        //{
+        //    return "value";
+        //}
 
-        // DELETE api/<UsuariosController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //// POST api/<UsuariosController>
+        //[HttpPost]
+        //public void Post([FromBody] string value)
+        //{
+        //}
+
+        //// PUT api/<UsuariosController>/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody] string value)
+        //{
+        //}
+
+        //// DELETE api/<UsuariosController>/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
     }
 }
