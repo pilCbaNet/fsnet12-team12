@@ -39,7 +39,7 @@ namespace MiBilleteraWebApi.Controllers
             Usuarios usuarioResoult;
             using (var db = new MiBilleteraContext())
             {
-                usuarioResoult = new Usuarios()login
+                usuarioResoult = new UsuarioBD().Login(db,oUsuarios.Email, oUsuarios.Contraseña);
             }
             return usuarioResoult;
         }

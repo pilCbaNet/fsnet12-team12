@@ -15,5 +15,10 @@ namespace Negocio
             return bd.Usuarios.ToList();
         }
 
+        public Usuarios Login(MiBilleteraContext bd, string email, string contrasenia)
+        {
+            return (Usuarios?)bd.Usuarios.FirstOrDefault(a => a.Email == email && a.Contraseña == contrasenia);
+        }
+
     }
 }
