@@ -30,6 +30,19 @@ namespace MiBilleteraWebApi.Controllers
                 db.SaveChanges();
             }
         }
+
+
+        [HttpPost]
+        [Route("/api/login")]
+        public Usuarios Post([FromBody] VistaLoginUsuario oUsuarios)
+        {
+            Usuarios usuarioResoult;
+            using (var db = new MiBilleteraContext())
+            {
+                usuarioResoult = new Usuarios()login
+            }
+            return usuarioResoult;
+        }
         //// GET: api/<UsuariosController>
         //[HttpGet]
         //public IEnumerable<string> Get()
