@@ -31,8 +31,15 @@ export class NavbarComponent implements OnInit {
       let login: Login = new Login(email, password);
       this.miServicioInicioSession.iniciar_session(login).subscribe((data) => {
         document.getElementById('modal-cerrar')?.click();
-        alert('redirigiendo...');
-        this.router.navigate(['dashboard']);
+        if (data != null) {
+          this.router.navigate(['dashboard']);
+        }else {
+          alert("")
+          this.router.navigate(['home']);
+        }
+        console.log(data)
+        
+       
       });
     } else {
       alert('INGRESE UN CAMPO VÁLIDO');
