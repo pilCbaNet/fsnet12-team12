@@ -9,7 +9,7 @@ import { Retiros } from 'app/models/retiros';
 export class MovimientosService {
   constructor(private http: HttpClient) {}
   obtenerMovimientos(): Observable<any> {
-    return this.http.get('http://localhost:3000/movements');
+    return this.http.get('http://localhost:7225:api/operaciones');
   }
   guardarRetiro(retiro: Retiros): Observable<any> {
     return this.http.post('http://localhost:3000/movements', retiro);
