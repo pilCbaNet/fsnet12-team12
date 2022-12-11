@@ -10,23 +10,23 @@ namespace MiBilleteraWebApi.Controllers
     [ApiController]
     public class OperacionesController : ControllerBase
     {
-        // GET: api/<OperacionesController>
-        [HttpGet]
-        public List<Operaciones> Get()
+        // GET: api/<OperacionesController>/4
+        [HttpGet("{idUsuario}")]
+        public List<Operaciones> GetList(int idUsuario)
         {
             using (var db = new MiBilleteraContext())
             {
-                return db.Operaciones.Include(a => a.IdTipoOperacionNavigation).ToList();
+                return db.Operaciones.Include(a => a.IdTipoOperacionNavigation).Where(x => x.IdUsuario == idUsuario).ToList();
             }
         }
 
-        // GET api/<OperacionesController>/5
-        [HttpGet("{id}")]
-        public Operaciones Get(int id)
+        // GET api/<OperacionesController>/5/3
+        [HttpGet("{idUsuario}/{idOperacion}")]
+        public Operaciones GetById(int idUsuario, int idOperacion)
         {
             using (var db = new MiBilleteraContext())
             {
-                return db.Operaciones.Include(a => a.IdTipoOperacionNavigation).FirstOrDefault(a => a.IdOperaciones == id);
+                return db.Operaciones.Include(a => a.IdTipoOperacionNavigation).Where(x => x.IdUsuario == idUsuario).FirstOrDefault(a => a.IdOperaciones == idOperacion);
             }
         }
 
