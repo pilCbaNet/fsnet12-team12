@@ -30,16 +30,19 @@ export class NavbarComponent implements OnInit {
       let password: string = this.form.get('pass')?.value;
       let login: Login = new Login(email, password);
       this.miServicioInicioSession.iniciar_session(login).subscribe((data) => {
+        localStorage.setItem('user', JSON.stringify(data));
+
+        let usuario: any = localStorage.getItem('user');
+        console.log(usuario);
+
         document.getElementById('modal-cerrar')?.click();
         if (data != null) {
           this.router.navigate(['dashboard']);
-        }else {
-          alert("")
+        } else {
+          alert('');
           this.router.navigate(['home']);
         }
-        console.log(data)
-        
-       
+        console.log(data);
       });
     } else {
       alert('INGRESE UN CAMPO VÁLIDO');
