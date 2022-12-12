@@ -13,18 +13,19 @@
 
       <!-- Login Form -->
       <form [formGroup]="form">
-        <input type="text" formControlName="usuario" id="user" class="fadeIn second" name="usuario" placeholder="Usuario">
+        <input type="text" formControlName="usuario1" id="user" class="fadeIn second" name="usuario" placeholder="Usuario">
         <input type="email" formControlName="email" id="user" class="fadeIn second" name="email" placeholder="Email">
-        <input type="password" formControlName="password" id="password"  class="fadeIn third" name="register"
+        <input type="password" formControlName="password" id="password"  class="fadeIn third" 
           placeholder="Contraseña">
-          <input type="password" formControlName="password" id="password"  class="fadeIn third" name="register"
-          placeholder="Repita su contraseña">
+
             <h3>Datos personales</h3>
-            <input type="text" formControlName="dni" id="user" class="fadeIn second" name="dni" placeholder="Dni">
-            <input type="text" formControlName="domicilio" id="user" class="fadeIn second" name="domicilio" placeholder="Domicilio">
-            <input type="tel" formControlName="telefono" id="user" class="fadeIn second" name="teléfono" placeholder="Teléfono"> 
+            <input type="text" formControlName="nombre" id="user" class="fadeIn second"  placeholder="Nombre">
+            <input type="text" formControlName="apellido" id="user" class="fadeIn second"  placeholder="Apellido">
+            <input type="text" formControlName="dni" id="user" class="fadeIn second"  placeholder="Dni">
+            <input type="text" formControlName="domicilio" id="user" class="fadeIn second"  placeholder="Domicilio">
+            <input type="tel" formControlName="telefono" id="user" class="fadeIn second"  placeholder="Teléfono"> 
             <p class="fecha">Fecha de nacimiento</p> 
-            <input type="date" min="1900-01-01" max="2022-11-01" formControlName="fecha" id="user" class="fadeIn second" name="fecha" placeholder="Fecha de nacimiento">
+            <input type="date" min="1900-01-01" max="2022-11-01" formControlName="fechaNacimiento" id="user" class="fadeIn second"  placeholder="Fecha de nacimiento">
 
         <input type="submit" (click)="register()" id="submit" class="fadeIn fourth" value="Registrate">
 
@@ -41,7 +42,10 @@
           
 
 
-      </form>
+      </form> 
+
+      
+     
 
       <div>
         <p style="font-size:13px;">Lteam 2022.</p>

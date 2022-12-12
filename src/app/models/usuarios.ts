@@ -1,33 +1,38 @@
-export class Usuarios {
-  nombre: string;
-  fechaNacimiento: Date;
-  email: string;
-  usuario1: string;
-  contraseña: string;
-  telefono: string;
-  domicilio: string;
-  dni: string;
-  idCuenta: number;
+
+ export class Usuarios {
+  Nombre: string;
+  Apellido:string;
+  FechaNacimiento: any;
+  Email: string;
+  Usuario1: string;
+  Contraseña: string;
+  Telefono: string;
+  Domicilio: string;
+  Dni: string;
+  IdCuenta:number;
 
   constructor(
-    nombre: string,
-    fechaNacimiento: Date,
-    email: string,
-    usuario1: string,
-    contraseña: string,
-    telefono: string,
-    domicilio: string,
-    dni: string,
-    idCuenta: number
+    Nombre: string,
+    Apellido:string,
+    FechaNacimiento: any,
+    Email: string,
+    Usuario1: string,
+    Contraseña: string,
+    Telefono: string,
+    Domicilio: string,
+    Dni: string,
+    IdCuenta:number
   ) {
-    this.nombre = nombre;
-    this.fechaNacimiento = fechaNacimiento;
-    this.email = email;
-    this.usuario1 = usuario1;
-    this.contraseña = contraseña;
-    this.telefono = telefono;
-    this.domicilio = domicilio;
-    this.dni = dni;
-    this.idCuenta = idCuenta;
+    this.Nombre = Nombre;
+    this.Apellido=Apellido;
+    this.FechaNacimiento = FechaNacimiento;
+    this.Email = Email;
+    this.Usuario1 = Usuario1;
+    this.Contraseña = Contraseña;
+    this.Telefono = Telefono;
+    this.Domicilio = Domicilio;
+    this.Dni = Dni;
+    this.IdCuenta= IdCuenta;
   }
 }
+ 

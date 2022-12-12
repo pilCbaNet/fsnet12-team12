@@ -29,6 +29,7 @@ export class NavbarComponent implements OnInit {
       let email: string = this.form.get('email')?.value;
       let password: string = this.form.get('pass')?.value;
       let login: Login = new Login(email, password);
+      console.log(login);
       this.miServicioInicioSession.iniciar_session(login).subscribe((data) => {
         document.getElementById('modal-cerrar')?.click();
         if (data != null) {

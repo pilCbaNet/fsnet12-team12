@@ -1,7 +1,9 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import { Login } from 'app/models/login';
+import { Usuarios } from 'app/models/usuarios';
+
+
 
 @Injectable({
     providedIn: 'root'
@@ -10,9 +12,10 @@ export class FormRegisterService {
 
     constructor (private http:HttpClient) { }
 
-    formRegister(login:Login):Observable<any>
+    formRegister(usuarios:Usuarios):Observable<any>
     {
-        return this.http.post('http://localhost:3000/posts',login);
+        console.log(usuarios)
+        return this.http.post<any>('https://localhost:7225/api/usuarios',usuarios);
     }
 
 }
