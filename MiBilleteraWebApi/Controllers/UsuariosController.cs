@@ -27,6 +27,14 @@ namespace MiBilleteraWebApi.Controllers
             using (var db = new MiBilleteraContext())
             {
                 db.Usuarios.Add(oUsuarios);
+
+                Cuentas oCuentas = new Cuentas();
+                oCuentas.Saldo = 0;
+                oCuentas.Alias = "Alias cuenta nueva";
+                db.Cuentas.Add(oCuentas);
+                db.SaveChanges();
+
+                oUsuarios.IdCuenta = oCuentas.IdCuenta;
                 db.SaveChanges();
             }
         }
