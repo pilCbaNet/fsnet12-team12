@@ -1,0 +1,114 @@
+<nav class="navbar bg-light navbar-dark bg-dark sticky-top">
+  <div class="container-fluid">
+    <div class="position-relative">
+      <a class="navbar-brand brand-position" routerLink="home">Team L </a>
+      <img
+        routerLink="home"
+        src="../../../assets/images/logo-teaml.png"
+        alt=""
+      />
+      <button
+        class="btn btn-dark me-2"
+        style="border-radius: 0px"
+        routerLink="/nosotros"
+      >
+        Quienes somos
+      </button>
+    </div>
+    <form onsubmit="event.preventDefault();" class="d-flex" role="search">
+      <button
+        class="btn btn-dark me-2"
+        style="border-radius: 0px"
+        type="submit"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Iniciar Sesion
+      </button>
+      <button
+        routerLink="/form"
+        class="btn btn-warning"
+        style="border-radius: 0px"
+        type="submit"
+      >
+        Registrarse
+      </button>
+    </form>
+  </div>
+</nav>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Inicio sesion</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form class="form-control" [formGroup]="form">
+          <div class="mb-3 row">
+            <label for="staticEmail" class="col-sm-3 col-form-label"
+              >Email</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="staticEmail"
+                placeholder="email@example.com"
+                formControlName="email"
+              />
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-3 col-form-label"
+              >Contraseña</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="password"
+                class="form-control"
+                formControlName="pass"
+                id="inputPassword"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button
+          type="button"
+          style="border-radius: 0px"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+          id="modal-cerrar"
+        >
+          Cerrar
+        </button>
+        <button
+          type="button"
+          style="border-radius: 0px"
+          class="btn btn-warning"
+          data-bs-dismiss="modal"
+          (click)="login()"
+          routerLink="/dashboard"
+        >
+          Iniciar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

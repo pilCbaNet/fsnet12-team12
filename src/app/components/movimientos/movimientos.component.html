@@ -1,0 +1,254 @@
+<div class="container mt-3 d-flex flex-column rounded bg-white">
+  <header class="mt-2">
+    <p style="float: right">
+      <span style="font-weight: 550">Bienvenido/a <br /></span>
+
+      <span style="font-size: smaller"
+        ><a href="../../../assets/images/Banner.png">Ver ayuda.</a></span
+      >
+    </p>
+    <p style="float: left">
+      {{
+        now.toLocaleDateString("es-AR", {
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        })
+      }}
+    </p>
+  </header>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Escritorio</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Movimientos</li>
+    </ol>
+  </nav>
+
+  <section>
+    <h2>Detalles de movimientos</h2>
+    <hr />
+
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button bg-warning"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            Datos de cuenta
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="headingOne"
+        >
+          <div class="accordion-body">
+            <h4>Datos de cuenta</h4>
+            <label class="mt-2" for="username">Caja de ahorro</label> :
+            <select name="cajadeahorro" id="cajadeahorro">
+              <option value="CA-1112-1111-3333/CUENTA-PESOS">
+                CA-1112-1111-3333/CUENTA-PESOS
+              </option>
+            </select>
+            <br />
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed bg-warning"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            Filtrar Movimientos
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+        >
+          <div class="accordion-body">
+            <h4>Filtrar por</h4>
+
+            <form [formGroup]="form" (ngSubmit)="sortList()">
+              <div class="input-group mt-3 mb-2">
+                <label
+                  class="input-group-text bg-dark text-light"
+                  for="filtrartipo"
+                  >Tipo de Operación</label
+                >
+                <select
+                  class="form-select"
+                  name="filtrartipo"
+                  id="filtrartipo"
+                  formControlName="type"
+                >
+                  <option value="" disabled selected>
+                    Seleccione el tipo de operación
+                  </option>
+                  <option value="Deposit">Depósito</option>
+                  <option value="Withdraw">Retiro</option>
+                  <option value="Transfer">Transferencia</option>
+                </select>
+              </div>
+
+              <label for="filtrardesde">Fecha desde</label> :
+              <input
+                type="date"
+                name="filtrardesde"
+                id="filtrardesde"
+                formControlName="since"
+              />
+
+              <label for="filtrarhasta">Fecha hasta</label> :
+              <input
+                type="date"
+                name="filtrarhasta"
+                id="filtrarhasta"
+                formControlName="till"
+              />
+              <br /><br />
+              <label for="cantoperaciones"
+                >Cantidad de operaciones a mostrar</label
+              >
+              :
+              <input
+                type="number"
+                name="cantoperaciones"
+                id="cantoperaciones"
+                min="0"
+                value="10"
+                max="30"
+                step="1"
+                formControlName="amount"
+              />
+              <br />
+              <span class="button_row">
+                <button
+                  type="submit"
+                  class="btn btn-outline-primary"
+                  (click)="sortList()"
+                >
+                  Buscar
+                </button>
+                <input
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  value="Descargar"
+              /></span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table class="table table-hover">
+      <thead>
+        <tr class="bg-warning">
+          <th scope="col">
+            Fecha
+            <i
+              class="fa fa-sort"
+              aria-hidden="true"
+              (click)="sortListByDate()"
+            ></i>
+          </th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Importe</th>
+          <th scope="col">Saldo</th>
+          <th scope="col">Ver detalle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let item of movimientos; let i = index">
+          <tr>
+            <th scope="row">{{ item.fecha }}</th>
+            <td>{{ item.idTipoOperacionNavigation.descripcion }}</td>
+            <td>
+              <div
+                *ngIf="
+                  item.idTipoOperacionNavigation.descripcion ==
+                    'Deposito en efectivo';
+                  then thenBlock;
+                  else elseBlock
+                "
+              ></div>
+              <ng-template #thenBlock>
+                <span style="color: rgb(11, 161, 11)">${{ item.monto }}</span>
+              </ng-template>
+              <ng-template #elseBlock>
+                <span style="color: red">-${{ item.monto }}</span></ng-template
+              >
+            </td>
+            <td>$3256</td>
+            <td>
+              <button
+                class="btn btn-primary btn-sm"
+                (click)="arrayExpanded[i] = !arrayExpanded[i]"
+              >
+                Link
+              </button>
+            </td>
+          </tr>
+          <tr *ngIf="arrayExpanded[i]">
+            <td colspan="5">
+              <div class="card text-center">
+                <div class="card-header">Datos de transacción</div>
+                <div class="card-body">
+                  <h5 class="card-title">Operación #{{ item.id }}</h5>
+                  <i class="fa fa-check mt-1 mb-4" aria-hidden="true"></i>
+                  <div class="mb-4">
+                    <h5>Datos de Operación</h5>
+                    <p class="card-text">
+                      La transacción fue llevada a cabo con éxito.
+                    </p>
+                    <p>
+                      Codigo de operacion: <b> #00-012{{ item.id }}</b> <br />
+                      Fecha de operacion: <b>{{ item.fecha }}</b> <br />
+                      Monto: <b> ${{ item.monto }}</b> <br />
+                      Moneda: <b>USD/ARS</b> <br />
+                      Estado: <b>Finalizado</b>
+                      <br />
+                      Descripción:
+                      <b>{{ item.idTipoOperacionNavigation.descripcion }}</b>
+                    </p>
+                    <br />
+                    <h5>Datos de Cuenta</h5>
+                    <p>
+                      Nombre: <b>{{ item.accountName }}</b
+                      ><br />
+                      Número de cuenta: <b>{{ item.accountNumber }}</b> <br />
+                      Saldo restante: <b>$3256</b>
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-dismiss="modal"
+                    (click)="arrayExpanded[i] = !arrayExpanded[i]"
+                  >
+                    Cerrar
+                  </button>
+                </div>
+
+                <div class="card-footer text-muted">2 days ago</div>
+              </div>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+    <hr />
+    <br />
+  </section>
+</div>
