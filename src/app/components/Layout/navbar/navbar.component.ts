@@ -24,6 +24,10 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  refreshPage() {
+    window.location.reload();
+  }
+
   login() {
     if (this.form.valid) {
       let email: string = this.form.get('email')?.value;
@@ -31,6 +35,8 @@ export class NavbarComponent implements OnInit {
       let login: Login = new Login(email, password);
       console.log(login);
       this.miServicioInicioSession.iniciar_session(login).subscribe((data) => {
+        localStorage.clear();
+        this.refreshPage();
         localStorage.setItem('user', JSON.stringify(data));
 
         let usuario: any = localStorage.getItem('user');

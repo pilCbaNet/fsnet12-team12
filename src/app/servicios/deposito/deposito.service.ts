@@ -4,19 +4,22 @@ import { Deposito } from 'app/models/deposito';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DepositoService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-
-  obtenerDatosCuenta(): Observable<any>
-  {
-    return this.http.get("http://localhost:3000/cuentas");
+  obtenerDatosCuenta(): Observable<any> {
+    return this.http.get('http://localhost:3000/cuentas');
   }
 
-  guardarDeposito(deposito:Deposito): Observable<any>
-  {
-    return this.http.post("http://localhost:3000/posts", deposito);
+  guardarDeposito(deposito: Deposito): Observable<any> {
+    console.log('Deposito service:');
+    console.log(deposito);
+
+    return this.http.post(
+      'https://localhost:7225/api/operaciones/deposito',
+      deposito
+    );
   }
 }

@@ -1,44 +1,60 @@
 <div class="deposito">
-    <div class="container">
-        <h1>DEPÓSITO</h1>
-        <form class="form-control" [formGroup]="form">
-            <div class="row">
-                <div class="col"></div>
-                <div class="col-md-10">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <h5>Usuario:</h5>
-                            <p>{{cuentas[0].usuario}}</p>
-                            <h5>Numero de cuenta:</h5>
-                            <p>{{cuentas[0].numeroDeCuenta}}</p>
-                        </div>
-                        <div class="col-md-5">
-                            <label for="montoDeposito" class="form-label">Monto a depositar:</label> 
-                            <input type="number" class="form-control" id="montoDeposito" formControlName="montoDeposito"/>
-                            <div *ngIf="form.get('montoDeposito')?.invalid && 
-                                (form.get('montoDeposito')?.dirty || 
-                                form.get('montoDeposito')?.touched)" class="text-danger">
-                                <div *ngIf="form.get('montoDeposito')?.errors?.['required']">
-                                  El monto a depositar es requerido.
-                                </div>
-                                <div *ngIf="form.get('montoDeposito')?.errors?.['min']">
-                                  El valor ingresado no supera el monto mínimo de depósito
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-dark me-2" (click)="realizarDeposito()">Realizar depósito</button>
-                        </div>
-                        <div class="col-md-5">
-                            <h5>Saldo actual:</h5>
-                            <p>{{cuentas[0].saldo}}</p>
-                        </div>
-                        <div class="col-md-5">
-                            <h5>Código de depósito generado:</h5>
-                            <p>{{codigo}}</p>
-                        </div>
-                    </div>
+  <div class="container">
+    <h1>DEPÓSITO</h1>
+    <form class="form-control" [formGroup]="form">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-md-10">
+          <div class="row">
+            <div class="col-md-5">
+              <h5>Usuario:</h5>
+              <!--               <p>{{ cuentas[0].usuario }}</p> -->
+              <h5>Numero de cuenta:</h5>
+              <!--               <p>{{ cuentas[0].numeroDeCuenta }}</p> -->
+            </div>
+            <div class="col-md-5">
+              <input type="text" formControlName="dniRetiro" id="dniRetiro" />
+              <label for="monto" class="form-label">Monto a depositar:</label>
+              <input
+                type="number"
+                class="form-control"
+                id="monto"
+                formControlName="monto"
+              />
+              <div
+                *ngIf="
+                  form.get('monto')?.invalid &&
+                  (form.get('monto')?.dirty || form.get('monto')?.touched)
+                "
+                class="text-danger"
+              >
+                <div *ngIf="form.get('monto')?.errors?.['required']">
+                  El monto a depositar es requerido.
                 </div>
-                <div class="col"></div>
-            </div>         
-        </form>
-    </div>
+                <div *ngIf="form.get('monto')?.errors?.['min']">
+                  El valor ingresado no supera el monto mínimo de depósito
+                </div>
+              </div>
+              <button
+                type="submit"
+                class="btn btn-dark me-2"
+                (click)="realizarDeposito()"
+              >
+                Realizar depósito
+              </button>
+            </div>
+            <div class="col-md-5">
+              <h5>Saldo actual:</h5>
+              <!--               <p>{{ cuentas[0].saldo }}</p> -->
+            </div>
+            <div class="col-md-5">
+              <h5>Código de depósito generado:</h5>
+              <p>{{ codigo }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col"></div>
+      </div>
+    </form>
+  </div>
 </div>

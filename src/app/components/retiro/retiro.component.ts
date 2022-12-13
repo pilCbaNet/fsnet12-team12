@@ -46,7 +46,13 @@ export class RetiroComponent implements OnInit {
     let monto = this.form.get('monto')?.value;
 
     let dniRetiro = this.form.get('dniRetiro')?.value;
-    let idUsuario = 9;
+
+    let user: any = localStorage.getItem('user');
+    let idUsuario: number = 0;
+    if (user != null) {
+      let userData: any = JSON.parse(user);
+      idUsuario = userData.idUsuario;
+    }
 
     let retiro: Retiros = new Retiros(monto, dniRetiro, idUsuario);
     this.redirect();

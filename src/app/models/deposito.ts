@@ -1,10 +1,11 @@
-export class Deposito
-{
-    monto: number;
-    codigo: number;
+export class Deposito {
+  monto: number;
+  dniRetiro: string;
+  idUsuario: number;
 
-    constructor(monto:number, codigo:number){
-        this.monto = monto;
-        this.codigo = codigo;
-    }
+  constructor(monto: number, dniRetiro: string, idUsuario: number) {
+    this.monto = monto;
+    this.dniRetiro = dniRetiro;
+    this.idUsuario = idUsuario;
+  }
 }
