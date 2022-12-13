@@ -1,12 +1,10 @@
 /* BASIC */
 .loginBody {
     font-family: "Poppins", sans-serif;
-    height: 100vh;
+    height: 200vh;
     background:#ffc107;
   }
-  
-  
-  
+
   h2 {
     color:#ffc107;
     text-align: center;
@@ -29,9 +27,7 @@
     text-align: center;
     margin: 10px 8px 1px 8px; 
   }
-  
-  
-  
+
   /* STRUCTURE */
   
   .wrapper {
@@ -40,7 +36,7 @@
     flex-direction: column; 
     justify-content: center;
     width: 100%;
-    min-height: 100%;
+    min-height: 80%;
     padding: 20px;
   }
   
@@ -57,9 +53,7 @@
     box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     text-align: center;
   }
-  
-  
-  
+
   /* TABS */
   
   h2.inactive {
@@ -69,10 +63,7 @@
   ::placeholder {
     color: #f5cc51;
   }
- 
-  
-  
-  
+
   /* FORM TYPOGRAPHY*/
   
   input[type=button], input[type=submit], input[type=reset]   {
