@@ -1,26 +1,35 @@
 <div class="container">
   <h1>Extracción de dinero</h1>
 
-  <div class="input-group mb-4">
-    <span class="retiro" id="retiro">Ingrese el monto a retirar: </span
-    ><span class="input-group-text"> $ </span>
-    <input type="number" class="form-control" id="retiro" />
-  </div>
-  <div class="mb-3 d-flex">
-    <label for="dni.retiro" class="dni.retiro">DNI</label>
-    <input
-      type="number"
-      class="form-control"
-      id="dni.retiro"
-      placeholder="Ingrese el DNI de quien retirará el dinero"
-    />
-  </div>
-  <div>
-    <button type="button" class="btn btn-primary" (click)="getRandom()">
-      Generar Código
-    </button>
-    <button class="btn btn-success m-2" id="cargar" (click)="deposit()">
+  <form class="form-control" [formGroup]="form">
+    <input type="number" formControlName="monto" id="retiro" />
+    <input type="text" formControlName="dniRetiro" id="dniRetiro" />
+
+    <!-- 
+    <div class="input-group mb-4">
+      <span class="retiro" id="retiro">Ingrese el monto a retirar: </span
+      ><span class="input-group-text"> $ </span>
+      <input type="number" class="form-control" id="retiro" />
+    </div>
+    <div class="mb-3 d-flex">
+      <label for="dni.retiro" class="dni.retiro">DNI</label>
+      <input
+        type="number"
+        class="form-control"
+        id="dni.retiro"
+        placeholder="Ingrese el DNI de quien retirará el dinero"
+      />
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary" (click)="getRandom()">
+        Generar Código
+      </button>
+      <button class="btn btn-success m-2" id="cargar" (click)="deposit()">
+        Confirmacion retiro
+      </button>
+    </div> -->
+    <button class="btn btn-success m-2" id="cargar" (click)="withdraw()">
       Confirmacion retiro
     </button>
-  </div>
+  </form>
 </div>

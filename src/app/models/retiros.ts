@@ -1,21 +1,11 @@
 export class Retiros {
-  date: any;
-  mount: number;
-  description: string;
-  accountNumber: string;
-  accountName: string;
+  monto: number;
+  dniRetiro: string;
+  idUsuario: number;
 
-  constructor(
-    date: any,
-    mount: any,
-    description: string,
-    accountNumber: string,
-    accountName: string
-  ) {
-    this.date = date;
-    this.mount = mount;
-    this.description = description;
-    this.accountNumber = accountNumber;
-    this.accountName = accountName;
+  constructor(monto: number, dniRetiro: string, idUsuario: number) {
+    this.monto = monto;
+    this.dniRetiro = dniRetiro;
+    this.idUsuario = idUsuario;
   }
 }

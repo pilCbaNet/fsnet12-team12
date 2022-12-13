@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Retiros } from 'app/models/retiros';
 import { MovimientosService } from 'app/servicios/movimientos/movimientos.service';
@@ -13,30 +14,41 @@ export class RetiroComponent implements OnInit {
     alert(Math.round(Math.random() * 1000));
   }
   movimientos: any = [];
-  constructor(private service: MovimientosService, private router: Router) {}
+  form!: FormGroup;
+  codigo: any;
+
+  constructor(
+    private service: MovimientosService,
+    private formBuilder: FormBuilder,
+    private router: Router
+  ) {
+    this.form = this.formBuilder.group({
+      monto: ['', [Validators.required, Validators.min(1)]],
+      dniRetiro: ['', []],
+    });
+  }
 
   ngOnInit(): void {
     this.service.obtenerMovimientos().subscribe((data) => {
       this.movimientos = data;
     });
   }
-  deposit() {
-    let today = new Date();
-    let date = today.toLocaleString('es-AR');
 
-    let mount: number = 1000;
+  get monto() {
+    return this.form.get('monto');
+  }
 
-    let description: string = 'Withdraw cash';
-    let accountNumber = '1234567890';
-    let accountName = 'Tania';
+  get dniRetiro() {
+    return this.form.get('dniRetiro');
+  }
 
-    let retiro: Retiros = new Retiros(
-      date,
-      mount,
-      description,
-      accountNumber,
-      accountName
-    );
+  withdraw() {
+    let monto = this.form.get('monto')?.value;
+
+    let dniRetiro = this.form.get('dniRetiro')?.value;
+    let idUsuario = 9;
+
+    let retiro: Retiros = new Retiros(monto, dniRetiro, idUsuario);
     this.redirect();
 
     this.service.guardarRetiro(retiro).subscribe((dataOk) => {

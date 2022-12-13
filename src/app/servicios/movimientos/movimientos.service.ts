@@ -22,6 +22,11 @@ export class MovimientosService {
   }
 
   guardarRetiro(retiro: Retiros): Observable<any> {
-    return this.http.post('https://localhost:7225/api/operaciones/', retiro);
+    console.log('guarderRetiro service');
+    console.log(retiro);
+    return this.http.post(
+      'https://localhost:7225/api/operaciones/retiro',
+      retiro
+    );
   }
 }
