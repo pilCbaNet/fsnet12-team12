@@ -21,6 +21,7 @@ import { UltimosRetirosComponent } from './components/ultimos-retiros/ultimos-re
 import { ReactiveFormsModule } from '@angular/forms';
 import { RetiroComponent } from './components/retiro/retiro.component';
 import { DepositoComponent } from './components/deposito/deposito.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { DepositoComponent } from './components/deposito/deposito.component';
     UltimosRetirosComponent,
     RetiroComponent,
     DepositoComponent,
+    NosotrosComponent,
   ],
 
   imports: [

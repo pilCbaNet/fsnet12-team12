@@ -10,6 +10,7 @@ import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.
 import { RetiroComponent } from './components/retiro/retiro.component';
 import { DepositoComponent } from './components/deposito/deposito.component';
 import { UltimosRetirosComponent } from './components/ultimos-retiros/ultimos-retiros.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
 
 const routes: Routes = [
   { path: 'home', component: ServiciosOfrecidosComponent },
@@ -27,7 +28,7 @@ const routes: Routes = [
     component: MenuComponent,
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'quienes-somos', component: QuienesSomosComponent },
+  { path: 'nosotros', component: NosotrosComponent },
 ];
 
 @NgModule({
