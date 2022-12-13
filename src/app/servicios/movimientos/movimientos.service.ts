@@ -14,14 +14,14 @@ export class MovimientosService {
     if (user != null) {
       let userData: any = JSON.parse(user);
       console.log('from movimientos service' + userData.idUsuario);
-      let url = 'http://localhost:7225/api/operaciones/' + userData.idUsuario;
+      let url = 'https://localhost:7225/api/operaciones/' + userData.idUsuario;
       console.log('url: ' + url);
       return this.http.get(url);
     }
-    return this.http.get('http://localhost:7225/api/operaciones');
+    return this.http.get('https://localhost:7225/api/operaciones');
   }
 
   guardarRetiro(retiro: Retiros): Observable<any> {
-    return this.http.post('http://localhost:3000/movements', retiro);
+    return this.http.post('https://localhost:7225/api/operaciones/', retiro);
   }
 }

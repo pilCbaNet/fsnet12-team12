@@ -172,21 +172,22 @@
       <tbody>
         <ng-container *ngFor="let item of movimientos; let i = index">
           <tr>
-            <th scope="row">{{ item.date }}</th>
-            <td>{{ item.description }}</td>
+            <th scope="row">{{ item.fecha }}</th>
+            <td>{{ item.idTipoOperacionNavigation.descripcion }}</td>
             <td>
               <div
                 *ngIf="
-                  item.description == 'Deposit cash';
+                  item.idTipoOperacionNavigation.descripcion ==
+                    'Deposito en efectivo';
                   then thenBlock;
                   else elseBlock
                 "
               ></div>
               <ng-template #thenBlock>
-                <span style="color: rgb(11, 161, 11)">${{ item.mount }}</span>
+                <span style="color: rgb(11, 161, 11)">${{ item.monto }}</span>
               </ng-template>
               <ng-template #elseBlock>
-                <span style="color: red">-${{ item.mount }}</span></ng-template
+                <span style="color: red">-${{ item.monto }}</span></ng-template
               >
             </td>
             <td>$3256</td>
@@ -213,12 +214,13 @@
                     </p>
                     <p>
                       Codigo de operacion: <b> #00-012{{ item.id }}</b> <br />
-                      Fecha de operacion: <b>{{ item.date }}</b> <br />
-                      Monto: <b> ${{ item.mount }}</b> <br />
+                      Fecha de operacion: <b>{{ item.fecha }}</b> <br />
+                      Monto: <b> ${{ item.monto }}</b> <br />
                       Moneda: <b>USD/ARS</b> <br />
                       Estado: <b>Finalizado</b>
                       <br />
-                      Descripción: <b>{{ item.description }}</b>
+                      Descripción:
+                      <b>{{ item.idTipoOperacionNavigation.descripcion }}</b>
                     </p>
                     <br />
                     <h5>Datos de Cuenta</h5>
