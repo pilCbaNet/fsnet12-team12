@@ -10,6 +10,7 @@ export class ServiciosOfrecidosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
