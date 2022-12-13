@@ -49,12 +49,16 @@
         >
           <div class="accordion-body">
             <h4>Datos de cuenta</h4>
-            <label class="mt-2" for="username">Caja de ahorro</label> :
+            <label class="mt-2 mb-2" for="username">Caja de ahorro</label> :
             <select name="cajadeahorro" id="cajadeahorro">
               <option value="CA-1112-1111-3333/CUENTA-PESOS">
-                CA-1112-1111-3333/CUENTA-PESOS
+                {{ cuenta.alias }}/CUENTA-PESOS
               </option>
             </select>
+            <br />
+            Saldo Disponible:
+            <b> {{ cuenta.saldo | currency : "USD" }}</b>
+
             <br />
           </div>
         </div>
@@ -96,9 +100,9 @@
                   <option value="" disabled selected>
                     Seleccione el tipo de operación
                   </option>
-                  <option value="Deposit">Depósito</option>
-                  <option value="Withdraw">Retiro</option>
-                  <option value="Transfer">Transferencia</option>
+                  <option value="Deposito">Depósito</option>
+                  <option value="Retiro">Retiro</option>
+                  <option value="Transferencia">Transferencia</option>
                 </select>
               </div>
 

@@ -14,6 +14,7 @@ export class MovimientosComponent implements OnInit {
   sortedDesc: boolean = false;
   form!: FormGroup;
   arrayExpanded: any;
+  cuenta: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -34,6 +35,11 @@ export class MovimientosComponent implements OnInit {
       this.arrayExpanded = this.reset.map((_: any) => false);
       console.log(this.movimientos);
     });
+    this.service.obtenerCuenta().subscribe((data) => {
+      this.cuenta = data;
+      console.log('this is your cuenta: ');
+      console.log(data);
+    });
   }
 
   sortList(): void {
@@ -44,7 +50,10 @@ export class MovimientosComponent implements OnInit {
     if (filterByType != '') {
       console.log('this is the filtered type: ' + filterByType);
       newFilteredList = newFilteredList.filter((item: any) => {
-        return item.description.split(' ')[0] == filterByType;
+        return (
+          item.idTipoOperacionNavigation.descripcion.split(' ')[0] ==
+          filterByType
+        );
       });
     }
     if (filterByAmount != '') {
