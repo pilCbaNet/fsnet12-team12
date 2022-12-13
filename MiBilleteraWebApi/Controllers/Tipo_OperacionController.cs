@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Entities;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,9 +12,12 @@ namespace MiBilleteraWebApi.Controllers
     {
         // GET: api/<Tipo_OperacionController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<TipoOperacion> Get()
         {
-            return new string[] { "value1", "value2" };
+            using (var db = new MiBilleteraContext())
+            {
+                return db.TipoOperacions.ToList();
+            }
         }
 
         // GET api/<Tipo_OperacionController>/5
@@ -24,8 +29,13 @@ namespace MiBilleteraWebApi.Controllers
 
         // POST api/<Tipo_OperacionController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] TipoOperacion oTipoOperacion)
         {
+            using (var db = new MiBilleteraContext())
+            {
+                db.TipoOperacions.Add(oTipoOperacion);
+                db.SaveChanges();
+            }
         }
 
         // PUT api/<Tipo_OperacionController>/5

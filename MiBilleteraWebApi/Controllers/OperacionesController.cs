@@ -30,14 +30,43 @@ namespace MiBilleteraWebApi.Controllers
             }
         }
 
-        // POST api/<OperacionesController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        // POST api/<OperacionesController>/Retiro
+        [HttpPost("Retiro")]
+        public void Post([FromBody] VistaRetiro vistaRetiro)
         {
+            using (var db = new MiBilleteraContext())
+            {
+                TipoOperacion result = db.TipoOperacions.FirstOrDefault(a => a.Descripcion == "Retiro de efectivo");
+                Usuarios userResult = db.Usuarios.FirstOrDefault(a => a.IdUsuario == vistaRetiro.idUsuario);
+
+                if (result == null)
+                {
+                    TipoOperacion nuevaOperacion = new TipoOperacion();
+                    nuevaOperacion.Descripcion = "Retiro de efectivo";
+                    db.TipoOperacions.Add(nuevaOperacion);
+                    db.SaveChanges();
+                    result = db.TipoOperacions.FirstOrDefault(a => a.Descripcion == "Retiro de efectivo");
+                }
+                Operaciones oOperacion = new Operaciones();
+
+                oOperacion.Monto = vistaRetiro.Monto;
+                oOperacion.Fecha = DateTime.Now;
+                oOperacion.DniRetiro = vistaRetiro.DniRetiro;
+                oOperacion.IdUsuario = vistaRetiro.idUsuario;
+                oOperacion.IdTipoOperacion = result.IdTipoOperacion;
+                oOperacion.IdTipoOperacionNavigation = result;
+                oOperacion.IdUsuarioNavigation = userResult;
+
+                Cuentas accountResult = db.Cuentas.FirstOrDefault(a => a.IdCuenta == userResult.IdCuenta);
+                accountResult.Saldo -= decimal.ToInt32(vistaRetiro.Monto);
+
+                db.Operaciones.Add(oOperacion);
+                db.SaveChanges();
+            }
         }
 
-        // PUT api/<OperacionesController>/5
-        [HttpPut("{id}")]
+            // PUT api/<OperacionesController>/5
+            [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
