@@ -1,11 +1,23 @@
-<div class="deposito">
+
   <div class="container">
-    <h1>DEPÓSITO</h1>
+    <h1 class="title">Depósito</h1>
     <form class="form-control" [formGroup]="form">
-      <div class="row">
-        <div class="col"></div>
-        <div class="col-md-10">
-          <div class="row">
+
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Monto</label>
+              <input type="number" formControlName="monto" id="monto" class="form-control" placeholder="Monto a depositar">
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Numero de cuenta</label>
+              <input type="text" formControlName="dniRetiro" id="dniRetiro" class="form-control" placeholder="Ingrese DNI">
+            </div>
+
+
+            <button type="submit" class="btn btn-dark me-2" (click)="realizarDeposito()"> Realizar depósito </button>
+
+
+            <br>
             <div class="col-md-5">
               <h5>Usuario:</h5>
               <!--               <p>{{ cuentas[0].usuario }}</p> -->
@@ -14,6 +26,7 @@
             </div>
             <div class="col-md-5">
               <input type="text" formControlName="dniRetiro" id="dniRetiro" />
+              
               <label for="monto" class="form-label">Monto a depositar:</label>
               <input
                 type="number"
@@ -21,7 +34,7 @@
                 id="monto"
                 formControlName="monto"
               />
-              <div
+              <!-- <div
                 *ngIf="
                   form.get('monto')?.invalid &&
                   (form.get('monto')?.dirty || form.get('monto')?.touched)
@@ -34,14 +47,8 @@
                 <div *ngIf="form.get('monto')?.errors?.['min']">
                   El valor ingresado no supera el monto mínimo de depósito
                 </div>
-              </div>
-              <button
-                type="submit"
-                class="btn btn-dark me-2"
-                (click)="realizarDeposito()"
-              >
-                Realizar depósito
-              </button>
+              </div> -->
+       
             </div>
             <div class="col-md-5">
               <h5>Saldo actual:</h5>
@@ -51,10 +58,7 @@
               <h5>Código de depósito generado:</h5>
               <p>{{ codigo }}</p>
             </div>
-          </div>
-        </div>
-        <div class="col"></div>
-      </div>
+      
     </form>
   </div>
-</div>
+

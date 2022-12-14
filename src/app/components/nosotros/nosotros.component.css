@@ -16,3 +16,13 @@
     text-decoration: none;
     color: #555;
 }
+
+.img-perfil{
+    height: 95.5px;
+    width: 95.5px;;
+}
+.title{
+    text-align: center;
+    font-weight: 100;
+    margin: 20px;
+  }

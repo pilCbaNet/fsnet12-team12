@@ -7,3 +7,10 @@
 .button_row input {
   margin: 0 2% 0 2%;
 }
+
+.title{
+  text-align: center;
+  font-weight: 100;
+  margin: 20px;
+}
+

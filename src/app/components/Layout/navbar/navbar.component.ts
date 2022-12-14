@@ -46,13 +46,16 @@ export class NavbarComponent implements OnInit {
         if (data != null) {
           this.router.navigate(['dashboard']);
         } else {
-          alert('');
-          this.router.navigate(['home']);
+          alert('ingresando...');
+          this.router.navigate(['dashboard']);
+          this.form.reset();
         }
         console.log(data);
       });
     } else {
-      alert('INGRESE UN CAMPO VÁLIDO');
+      alert('Por favor ingrese un usuario y contraseña valido.');
+      this.router.navigate(['home']);
+      this.form.reset();
     }
   }
 }

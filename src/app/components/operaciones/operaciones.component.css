@@ -2,16 +2,23 @@ hr{
     margin:20px 0px;
 }
 h3{
+    font-weight: 100;
     text-align: center;
+    margin: 20px;
 }
 .operaciones{
     width: 100%;
     height: auto;
 }
 .title{
+    font-weight: 100;
+    margin: 50px;
     text-align: center;
-    text-shadow: 3px 3px 3px #6e6e6e;
 }
 .tarJ{
     text-align: center;
+}
+
+.container{
+    margin: 100px;
 }
