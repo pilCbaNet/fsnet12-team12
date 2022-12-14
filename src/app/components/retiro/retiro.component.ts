@@ -16,6 +16,7 @@ export class RetiroComponent implements OnInit {
   movimientos: any = [];
   form!: FormGroup;
   codigo: any;
+  cuenta: any;
 
   constructor(
     private service: MovimientosService,
@@ -31,6 +32,10 @@ export class RetiroComponent implements OnInit {
   ngOnInit(): void {
     this.service.obtenerMovimientos().subscribe((data) => {
       this.movimientos = data;
+    });
+
+    this.service.obtenerCuenta().subscribe((data) => {
+      this.cuenta = data;
     });
   }
 
@@ -57,9 +62,13 @@ export class RetiroComponent implements OnInit {
     let retiro: Retiros = new Retiros(monto, dniRetiro, idUsuario);
     this.redirect();
 
-    this.service.guardarRetiro(retiro).subscribe((dataOk) => {
-      this.router.navigate(['retiro']);
-    });
+    if (this.cuenta.saldo - monto < 0) {
+      alert('Error: Fondos insuficientes.');
+    } else {
+      this.service.guardarRetiro(retiro).subscribe((dataOk) => {
+        this.router.navigate(['retiro']);
+      });
+    }
   }
   redirect() {
     this.router.navigate(['dashboard']);

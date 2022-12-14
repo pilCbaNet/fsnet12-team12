@@ -36,7 +36,7 @@ export class NavbarComponent implements OnInit {
       console.log(login);
       this.miServicioInicioSession.iniciar_session(login).subscribe((data) => {
         localStorage.clear();
-        this.refreshPage();
+        //this.refreshPage();
         localStorage.setItem('user', JSON.stringify(data));
 
         let usuario: any = localStorage.getItem('user');
@@ -44,10 +44,10 @@ export class NavbarComponent implements OnInit {
 
         document.getElementById('modal-cerrar')?.click();
         if (data != null) {
+          alert('ingresando...');
+          this.form.reset();
           this.router.navigate(['dashboard']);
         } else {
-          alert('ingresando...');
-          this.router.navigate(['dashboard']);
           this.form.reset();
         }
         console.log(data);

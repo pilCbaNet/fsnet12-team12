@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MovimientosService } from 'app/servicios/movimientos/movimientos.service';
+import { MovimientosService } from '../../servicios/movimientos/movimientos.service';
 
 @Component({
   selector: 'app-movimientos',
@@ -35,7 +35,7 @@ export class MovimientosComponent implements OnInit {
       this.arrayExpanded = this.reset.map((_: any) => false);
       console.log(this.movimientos);
     });
-    this.service.obtenerMovimientos().subscribe((data) => {
+    this.service.obtenerCuenta().subscribe((data) => {
       this.cuenta = data;
       console.log('this is your cuenta: ');
       console.log(data);

@@ -24,14 +24,14 @@ export class FormComponent implements OnInit {
         [Validators.required, Validators.maxLength(8), Validators.minLength(5)],
       ],
       nombre: [''],
-      apellido:[''],
-      fechaNacimiento:[''],
-      usuario1:[''],
+      apellido: [''],
+      fechaNacimiento: [''],
+      usuario1: [''],
       /* contraseña:[''], */
-      telefono:[''],
-      domicilio:[''],
-      dni:[''],
-      idCuenta:[''],
+      telefono: [''],
+      domicilio: [''],
+      dni: [''],
+      idCuenta: [''],
     });
   }
 
@@ -56,57 +56,61 @@ export class FormComponent implements OnInit {
   }
 
   get usuario1() {
-    return this.form.get('usuario1')
+    return this.form.get('usuario1');
   }
 
   get telefono() {
-    return this.form.get('telefono')
+    return this.form.get('telefono');
   }
 
   get domicilio() {
-    return this.form.get('domicilio')
+    return this.form.get('domicilio');
   }
 
   get dni() {
-    return this.form.get('dni')
+    return this.form.get('dni');
   }
 
   get idCuenta() {
-    return this.form.get('idCuenta')
+    return this.form.get('idCuenta');
   }
-
-
 
   ngOnInit(): void {}
 
   register() {
-    
-    let nombre=this.form.get('nombre')?.value;
-    let apellido=this.form.get('apellido')?.value;
-    let fechaNacimiento=this.form.get('fechaNacimiento')?.value;
-    let email= this.form.get('email')?.value;
-    let usuario1=this.form.get('usuario1')?.value;
-    let password=this.form.get('password')?.value;
-    let telefono=this.form.get('telefono')?.value;
-    let domicilio=this.form.get('domicilio')?.value;
-    let dni=this.form.get('dni')?.value;
-    let idCuenta=3;
+    let nombre = this.form.get('nombre')?.value;
+    let apellido = this.form.get('apellido')?.value;
+    let fechaNacimiento = this.form.get('fechaNacimiento')?.value;
+    let email = this.form.get('email')?.value;
+    let usuario1 = this.form.get('usuario1')?.value;
+    let password = this.form.get('password')?.value;
+    let telefono = this.form.get('telefono')?.value;
+    let domicilio = this.form.get('domicilio')?.value;
+    let dni = this.form.get('dni')?.value;
+    let idCuenta = 3;
 
+    let usuarios: Usuarios = new Usuarios(
+      nombre,
+      apellido,
+      fechaNacimiento,
+      email,
+      usuario1,
+      password,
+      telefono,
+      domicilio,
+      dni,
+      idCuenta
+    );
 
-      let usuarios: Usuarios = new Usuarios(nombre,apellido,fechaNacimiento,email,usuario1,password,telefono,domicilio,dni,idCuenta);  
-      
-      
-    
-      this.myService.formRegister(usuarios).subscribe( 
-        (data) => {
-      /*     document.getElementById('submit')?.click(); 
-          this.router.navigate(['dashboard']);  */
-          console.log(data);
-        },
-        (respuestaError) => {
-          alert('Se ha producido un error');
-        }
-      );
-    
+    this.myService.formRegister(usuarios).subscribe(
+      (data) => {
+        /*     document.getElementById('submit')?.click(); */
+        this.router.navigate(['home']);
+        console.log(data);
+      },
+      (respuestaError) => {
+        alert('Se ha producido un error');
+      }
+    );
   }
 }

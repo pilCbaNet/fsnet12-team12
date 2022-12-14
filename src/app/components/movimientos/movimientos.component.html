@@ -169,7 +169,6 @@
           </th>
           <th scope="col">Descripción</th>
           <th scope="col">Importe</th>
-          <th scope="col">Saldo</th>
           <th scope="col">Ver detalle</th>
         </tr>
       </thead>
@@ -188,19 +187,22 @@
                 "
               ></div>
               <ng-template #thenBlock>
-                <span style="color: rgb(11, 161, 11)">${{ item.monto }}</span>
+                <span style="color: rgb(11, 161, 11)">{{
+                  item.monto | currency : "USD"
+                }}</span>
               </ng-template>
               <ng-template #elseBlock>
-                <span style="color: red">-${{ item.monto }}</span></ng-template
+                <span style="color: red"
+                  >-{{ item.monto | currency : "USD" }}</span
+                ></ng-template
               >
             </td>
-            <td>$3256</td>
             <td>
               <button
                 class="btn btn-primary btn-sm"
                 (click)="arrayExpanded[i] = !arrayExpanded[i]"
               >
-                Link
+                Enlace
               </button>
             </td>
           </tr>

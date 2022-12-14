@@ -59,7 +59,7 @@ export class DepositoComponent implements OnInit {
       let deposito: Deposito = new Deposito(monto, dniRetiro, idUsuario);
 
       this.service.guardarDeposito(deposito).subscribe((dataOk) => {
-        this.router.navigate(['retiro']);
+        this.router.navigate(['dashboard']);
       });
       /*
       this.service.guardarDeposito(deposito).subscribe({

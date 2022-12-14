@@ -1,64 +1,38 @@
+<div class="container mb-4">
+  <h1 class="title">Depósito</h1>
+  <form class="form-control" [formGroup]="form">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Monto</label>
+      <input
+        type="number"
+        formControlName="monto"
+        id="monto"
+        class="form-control"
+        placeholder="Monto a depositar"
+      />
+    </div>
 
-  <div class="container">
-    <h1 class="title">Depósito</h1>
-    <form class="form-control" [formGroup]="form">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Número de cuenta</label
+      >
+      <input
+        type="text"
+        formControlName="dniRetiro"
+        id="dniRetiro"
+        class="form-control"
+        placeholder="Ingrese DNI"
+      />
+    </div>
 
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Monto</label>
-              <input type="number" formControlName="monto" id="monto" class="form-control" placeholder="Monto a depositar">
-            </div>
+    <button
+      type="submit"
+      class="btn btn-dark me-2"
+      (click)="realizarDeposito()"
+    >
+      Realizar depósito
+    </button>
 
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Número de cuenta</label>
-              <input type="text" formControlName="dniRetiro" id="dniRetiro" class="form-control" placeholder="Ingrese DNI">
-            </div>
-
-
-            <button type="submit" class="btn btn-dark me-2" (click)="realizarDeposito()"> Realizar depósito </button>
-
-
-            <br>
-            <div class="col-md-5">
-              <h5>Usuario:</h5>
-              <!--               <p>{{ cuentas[0].usuario }}</p> -->
-              <h5>Numero de cuenta:</h5>
-              <!--               <p>{{ cuentas[0].numeroDeCuenta }}</p> -->
-            </div>
-            <div class="col-md-5">
-              <input type="text" formControlName="dniRetiro" id="dniRetiro" />
-              
-              <label for="monto" class="form-label">Monto a depositar:</label>
-              <input
-                type="number"
-                class="form-control"
-                id="monto"
-                formControlName="monto"
-              />
-              <!-- <div
-                *ngIf="
-                  form.get('monto')?.invalid &&
-                  (form.get('monto')?.dirty || form.get('monto')?.touched)
-                "
-                class="text-danger"
-              >
-                <div *ngIf="form.get('monto')?.errors?.['required']">
-                  El monto a depositar es requerido.
-                </div>
-                <div *ngIf="form.get('monto')?.errors?.['min']">
-                  El valor ingresado no supera el monto mínimo de depósito
-                </div>
-              </div> -->
-       
-            </div>
-            <div class="col-md-5">
-              <h5>Saldo actual:</h5>
-              <!--               <p>{{ cuentas[0].saldo }}</p> -->
-            </div>
-            <div class="col-md-5">
-              <h5>Código de depósito generado:</h5>
-              <p>{{ codigo }}</p>
-            </div>
-      
-    </form>
-  </div>
-
+    <br />
+  </form>
+</div>
