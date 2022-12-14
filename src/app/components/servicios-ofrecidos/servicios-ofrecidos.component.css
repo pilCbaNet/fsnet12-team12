@@ -126,3 +126,9 @@ ul.price-list {
         margin-bottom: 40px;
     }
 }
+
+.title{
+    text-align: center;
+    font-weight: 100;
+    margin: 30px;
+  }
