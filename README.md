@@ -1,16 +1,48 @@
-# Front
+# Proyecto
 
-El proyecto tiene las siguientes dependencias:
+Billetera virtual GRUPO L 
 
-bootstrap
-bootstrap-icon
 
-una carpeta components donde se guardan todos los componentes. Para crear componentes usar:
+## Documentation
 
-ng g c component/nombredelcomponentequevamosacrear
+Este proyecto cuenta con Frontend  y Backend
+Desarrollado en Angular y Entity framework.
 
-una carpeta service donde se guardan todos los servicios. Para crear servicios usar:
+Componentes usados y controles usados:
 
-ng g s servicios/nombredelservicioquevamosacrear
+Inicio de session
 
-### -Sin importar el largo del nombre, es importante que al definir cada clase sea representativo del rol que va a cumplir.-
+Registro
+
+Nosotros 
+
+Operaciones (Depósitos y Extracciones)
+
+## Screenshots
+
+https://drive.google.com/drive/folders/1Ksl6_CcoIjfsKcMKCVNsOnAd22eTisZB
+
+
+## INTEGRANTES Y GITHUB
+
+Mauricio Torres | @Mauriciocba | @108432TorresMauricio
+
+Daniela Crapa | @DanielaCrapa
+
+Tania Ferreira | @Taniajnt
+
+Franco Gual | @FrancoGual
+
+Rodrigo Maldonado | @RodriMaldonado
+
+Ariel Hernan Rodriguez Bernal | @arieelbernal
+
+Nicolas Comba | @NicolasComba
+
+Matías Andrés Verón | @matias1409
+
+Alejo Nahuel Fernandez | @AlejoNahuelFernandez
+
+Miguel Alejandro Bazan | @BazanAle
+
+Leandro Alexis López | @leanlopez
