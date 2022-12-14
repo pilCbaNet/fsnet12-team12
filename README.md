@@ -37,8 +37,6 @@ Rodrigo Maldonado | @RodriMaldonado
 
 Ariel Hernan Rodriguez Bernal | @arieelbernal
 
-Nicolas Comba | @NicolasComba
-
 Matías Andrés Verón | @matias1409
 
 Alejo Nahuel Fernandez | @AlejoNahuelFernandez
