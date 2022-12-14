@@ -21,6 +21,18 @@ export class MovimientosService {
     return this.http.get('https://localhost:7225/api/operaciones');
   }
 
+  obtenerCuenta(): Observable<any> {
+    let user: any = localStorage.getItem('user');
+    if (user != null) {
+      let userData: any = JSON.parse(user);
+      console.log('from movimientos service' + userData.idCuenta);
+      let url = 'https://localhost:7225/api/cuentas/' + userData.idCuenta;
+      console.log('url: ' + url);
+      return this.http.get(url);
+    }
+    return this.http.get('https://localhost:7225/api/cuentas/');
+  }
+
   guardarRetiro(retiro: Retiros): Observable<any> {
     console.log('guarderRetiro service');
     console.log(retiro);
