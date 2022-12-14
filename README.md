@@ -25,6 +25,9 @@ https://drive.google.com/drive/folders/1Ksl6_CcoIjfsKcMKCVNsOnAd22eTisZB
 ## SPRINT
 https://github.com/pilCbaNet/fsnet12-team12/wiki/SPRINTS
 
+## BASE DE DATOS
+https://drive.google.com/drive/u/0/folders/1Ksl6_CcoIjfsKcMKCVNsOnAd22eTisZB
+
 ## INTEGRANTES Y GITHUB
 
 Mauricio Torres | @Mauriciocba | @108432TorresMauricio
