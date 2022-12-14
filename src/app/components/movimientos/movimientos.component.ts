@@ -35,7 +35,7 @@ export class MovimientosComponent implements OnInit {
       this.arrayExpanded = this.reset.map((_: any) => false);
       console.log(this.movimientos);
     });
-    this.service.obtenerCuenta().subscribe((data) => {
+    this.service.obtenerMovimientos().subscribe((data) => {
       this.cuenta = data;
       console.log('this is your cuenta: ');
       console.log(data);
